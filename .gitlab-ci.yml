@@ -1,0 +1,44 @@
+default:
+  image: ruby
+
+variables:
+  BUNDLE_INSTALL_FLAGS: "--quiet --jobs=$(nproc) --retry=3"
+  BUNDLE_FROZEN: "false" # No lockfile!
+  BUNDLE_GEMFILE: gemfiles/current.gemfile
+  K_SOUP_COV_DEBUG: true
+  K_SOUP_COV_DO: true
+  K_SOUP_COV_HARD: true
+  K_SOUP_COV_MIN_BRANCH: 100
+  K_SOUP_COV_MIN_LINE: 100
+  K_SOUP_COV_VERBOSE: true
+  K_SOUP_COV_FORMATTERS: "html,xml,rcov,lcov,json,tty"
+  K_SOUP_COV_MULTI_FORMATTERS: true
+  K_SOUP_COV_COMMAND_NAME: "RSpec Coverage"
+
+workflow:
+  rules:
+    # For merge requests, create a pipeline.
+    - if: '$CI_MERGE_REQUEST_IID'
+    # For the ` main ` branch, create a pipeline (this includes on schedules, pushes, merges, etc.).
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
+    # For tags, create a pipeline.
+    - if: '$CI_COMMIT_TAG'
+
+.current_ruby_template: &current_ruby_template
+  image: ruby:${RUBY_VERSION}
+  stage: test
+  script:
+    - gem update --system > /dev/null 2>&1
+    - bundle config --local path vendor
+    - bundle
+    - bundle exec rake
+  cache:
+    key: ${CI_JOB_IMAGE}
+    paths:
+      - vendor/ruby
+
+current-ruby:
+  <<: *current_ruby_template
+  parallel:
+    matrix:
+      - RUBY_VERSION: ["3.2", "3.3", "3.4"]
