@@ -1,4 +1,0 @@
-# frozen_string_literal: true
-
-gem "rubocop-lts", ["~> 12.1", ">= 12.1.1"]
-gem "rubocop-rspec", "~> 2.22", require: false

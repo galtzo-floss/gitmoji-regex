@@ -32,19 +32,21 @@ if RUN_COVERAGE
       %r{^/spec/},
       %r{^/src/},
       %r{^/test/},
-      %r{^/vendor/}
+      %r{^/vendor/},
     ]
 
     # Setup Coverage Dir
-    SimpleCov.coverage_dir "coverage"
+    SimpleCov.coverage_dir("coverage")
 
     if ALL_FORMATTERS
       require "simplecov-rcov"
       require "simplecov-json"
       require "simplecov-lcov"
       require "simplecov-cobertura"
-      command_name "#{ENV.fetch("GITHUB_WORKFLOW",
-        nil)} Job #{ENV.fetch("GITHUB_RUN_ID", nil)}:#{ENV.fetch("GITHUB_RUN_NUMBER", nil)}"
+      command_name "#{ENV.fetch(
+        "GITHUB_WORKFLOW",
+        nil,
+      )} Job #{ENV.fetch("GITHUB_RUN_ID", nil)}:#{ENV.fetch("GITHUB_RUN_NUMBER", nil)}"
 
       SimpleCov::Formatter::LcovFormatter.config do |c|
         c.report_with_single_file = true
@@ -56,7 +58,7 @@ if RUN_COVERAGE
         SimpleCov::Formatter::CoberturaFormatter, # XML for Jenkins
         SimpleCov::Formatter::RcovFormatter, # For Hudson
         SimpleCov::Formatter::LcovFormatter,
-        SimpleCov::Formatter::JSONFormatter # For CodeClimate
+        SimpleCov::Formatter::JSONFormatter, # For CodeClimate
       ]
     else
       command_name "RSpec"
@@ -64,8 +66,8 @@ if RUN_COVERAGE
     end
 
     # Use Merging (merges RSpec + Cucumber Test Results)
-    SimpleCov.use_merging true
-    SimpleCov.merge_timeout 3600
+    SimpleCov.use_merging(true)
+    SimpleCov.merge_timeout(3600)
 
     minimum_coverage(line: 100, branch: 100)
   end

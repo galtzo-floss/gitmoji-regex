@@ -43,7 +43,7 @@ module Gitmoji
 
       def next_src
         template_src = File.read(TEMPLATE_SRC)
-        template_src = template_src.sub(/% gitmojiRegex %/, pattern(fetch).to_s)
+        template_src = template_src.sub("% gitmojiRegex %", pattern(fetch).to_s)
         template_src.to_s
       end
 
