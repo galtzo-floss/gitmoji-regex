@@ -1,2 +1,8 @@
 inherit_gem:
   rubocop-lts: config/rubygem_rspec.yml
+
+RSpec/ExampleLength:
+  Enabled: false
+
+Layout/IndentationConsistency:
+  Exclude: ['*.md']
