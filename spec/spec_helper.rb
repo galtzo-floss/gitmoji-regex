@@ -1,33 +1,35 @@
 # frozen_string_literal: true
 
-DEBUG = ENV.fetch("DEBUG", nil) == "true"
-DEBUG_IDE = ENV.fetch("DEBUG_IDE", "false") == "true"
+DEBUGGING = ENV.fetch("DEBUG", "false").casecmp("true").zero?
+DEBUG_IDE = ENV.fetch("DEBUG_IDE", "false").casecmp("true").zero?
 
-# external gems
+# External gems
+require "debug" if DEBUGGING
+require "silent_stream"
+require "rspec/block_is_expected"
+require "rspec/block_is_expected/matchers/not"
+require "rspec/stubbed_env"
 require "version_gem/ruby"
 require "version_gem/rspec"
 
-engine = "ruby"
-major = 2
-minor = 7
-version = "#{major}.#{minor}"
-gte_min = VersionGem::Ruby.gte_minimum_version?(version, engine)
-actual_minor = VersionGem::Ruby.actual_minor_version?(major, minor, engine)
-
-DEBUGGING = gte_min && DEBUG
-DEBUG_JRUBY = VersionGem::Ruby.gte_minimum_version?(version, "jruby")
-RUN_COVERAGE = gte_min && (ENV.fetch("COVER_ALL", nil) || ENV.fetch("CI_CODECOV", nil) || ENV["CI"].nil?)
-ALL_FORMATTERS = (gte_min && ENV.fetch("COVER_ALL", nil)) ||
-  (actual_minor && (ENV.fetch("CI_CODECOV", nil) || ENV.fetch("CI", nil)))
+IS_CI = ENV.fetch("CI", "false").casecmp("true") == 0
 
 # RSpec Configs
 require "config/rspec/rspec_core"
 require "config/rspec/rspec_block_is_expected"
 require "config/debug"
 
-# Load Code Coverage as the last thing before this gem
-if RUN_COVERAGE
-  require "simplecov" # Config file `.simplecov` is run immediately when simplecov loads
+# Within the test suite, we will consider this gem to be activated
+ENV["FLOSS_FUNDING_GITMOJI__REGEX"] = "Free-as-in-beer"
+
+# NOTE: Gemfiles for older rubies won't have kettle-soup-cover.
+#       The rescue LoadError handles that scenario.
+begin
+  require "kettle-soup-cover"
+  require "simplecov" if Kettle::Soup::Cover::DO_COV # `.simplecov` is run here!
+rescue LoadError => error
+  # check the error message and re-raise when unexpected
+  raise error unless error.message.include?("kettle")
 end
 
 # This gem
