@@ -1,6 +1,31 @@
 module Gitmoji
   module Regex
-    VERSION: String
-    # See the writing guide of rbs: https://github.com/ruby/rbs#guides
+    REGEX: Regexp
+
+    module Version
+      VERSION: String
+    end
+
+    class Reference
+      GITMOJI_REFERENCE: String
+      GITMOJI_PATH: String
+      LIB_SRC: String
+      TEMPLATE_SRC: String
+
+      def compare_json: () -> bool
+      def cached_pattern: () -> Regexp
+      def fetched_pattern: () -> Regexp
+      def compare_src: () -> bool
+      def current_src: () -> String
+      def next_src: () -> String
+      def to_a: (?String) -> Array[String]
+      def write_json: () -> Integer
+      def write_src: () -> Integer
+
+      private
+      def pattern: (String) -> Regexp
+      def fetch: () -> String
+      def cached: () -> String
+    end
   end
 end
