@@ -6,14 +6,27 @@ and this project adheres to [Semantic Versioning v2](https://semver.org/spec/v2.
 
 ## [Unreleased]
 ### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [1.0.3] - 2025-08-20
+- TAG: [v1.0.3][1.0.3t]
+- COVERAGE: 100.00% -- 57/57 lines in 3 files
+- BRANCH COVERAGE: 100.00% -- 4/4 branches in 3 files
+- 100.00% documented
+### Added
 - New gitmoji "✈️"
 - appraisal2 for improved testing platform coverage in CI
 ### Changed
 - gem dependencies for local development
-### Fixed
-### Removed
+- centralized logos to logos.galtzo.com
+- scripts to enforce git commit message style
 
 ## [1.0.2] - 2023-05-30
+- TAG: [v1.0.2][1.0.2t]
 ### Added
 - New gitmoji "🧵"
 - New gitmoji "🦺"
@@ -59,11 +72,14 @@ and this project adheres to [Semantic Versioning v2](https://semver.org/spec/v2.
 ### Added
 - Initial release
 
-[Unreleased]: https://github.com/pboling/gitmoji-regex/compare/v1.0.2...HEAD
-[1.0.2]: https://github.com/pboling/gitmoji-regex/compare/v1.0.1...v1.0.2
-[1.0.1]: https://github.com/pboling/gitmoji-regex/compare/v1.0.0...v1.0.1
-[1.0.0]: https://github.com/pboling/gitmoji-regex/compare/v0.1.3...v1.0.0
-[0.1.3]: https://github.com/pboling/gitmoji-regex/compare/v0.1.2...v0.1.3
-[0.1.2]: https://github.com/pboling/gitmoji-regex/compare/v0.1.1...v0.1.2
-[0.1.1]: https://github.com/pboling/gitmoji-regex/compare/v0.1.0...v0.1.1
-[0.1.0]: https://github.com/pboling/gitmoji-regex/compare/e71c6c3dad5bfd59ae2509531eaea3a16e21cb63...v0.1.0
+[Unreleased]: https://github.com/galtzo-floss/gitmoji-regex/compare/v1.0.3...HEAD
+[1.0.3]: https://github.com/galtzo-floss/gitmoji-regex/compare/v1.0.2...v1.0.3
+[1.0.3t]: https://gitlab.com/galtzo-floss/gitmoji-regex/-/tags/v1.0.3
+[1.0.2]: https://github.com/galtzo-floss/gitmoji-regex/compare/v1.0.1...v1.0.2
+[1.0.2t]: https://gitlab.com/galtzo-floss/gitmoji-regex/-/tags/v1.0.2
+[1.0.1]: https://github.com/galtzo-floss/gitmoji-regex/compare/v1.0.0...v1.0.1
+[1.0.0]: https://github.com/galtzo-floss/gitmoji-regex/compare/v0.1.3...v1.0.0
+[0.1.3]: https://github.com/galtzo-floss/gitmoji-regex/compare/v0.1.2...v0.1.3
+[0.1.2]: https://github.com/galtzo-floss/gitmoji-regex/compare/v0.1.1...v0.1.2
+[0.1.1]: https://github.com/galtzo-floss/gitmoji-regex/compare/v0.1.0...v0.1.1
+[0.1.0]: https://github.com/galtzo-floss/gitmoji-regex/compare/e71c6c3dad5bfd59ae2509531eaea3a16e21cb63...v0.1.0
