@@ -6,7 +6,7 @@ permissions:
   id-token: write
 
 env:
-  K_SOUP_COV_MIN_BRANCH: 92
+  K_SOUP_COV_MIN_BRANCH: 100
   K_SOUP_COV_MIN_LINE: 100
   K_SOUP_COV_MIN_HARD: true
   K_SOUP_COV_FORMATTERS: "xml,rcov,lcov,tty"
@@ -114,7 +114,7 @@ jobs:
           hide_complexity: true
           indicators: true
           output: both
-          thresholds: '100 92'
+          thresholds: '100 100'
         continue-on-error: ${{ matrix.experimental != 'false' }}
 
       - name: Add Coverage PR Comment
