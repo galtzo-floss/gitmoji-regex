@@ -43,3 +43,6 @@ Appraisal.*.gemfile.lock
 
 # Editors
 *~
+
+# Sentinels
+.floss_funding.*.lock
