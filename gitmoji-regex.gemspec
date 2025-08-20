@@ -130,7 +130,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency("rspec-block_is_expected", "~> 1.0")        # ruby >= 1.8.7, for block_is_expected.to syntax
   spec.add_development_dependency("rspec_junit_formatter", "~> 0.6")          # ruby >= 2.3.0, for GitLab Test Result Parsing
   spec.add_development_dependency("rspec-stubbed_env", "~> 1.0")              # ruby >= 2.3.0, helper for stubbing ENV in specs
-  spec.add_development_dependency("rubocop-packaging", "~> 0.6")
   spec.add_development_dependency("silent_stream", "~> 1.0", ">= 1.0.11")     # ruby >= 2.3.0, for output capture
 
   # Development tasks
