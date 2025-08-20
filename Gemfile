@@ -36,3 +36,7 @@ eval_gemfile "gemfiles/modular/style.gemfile"
 
 # Documentation
 eval_gemfile "gemfiles/modular/documentation.gemfile"
+
+if ENV.fetch("FLOSS_FUNDING_LOCAL_DEV", "false").casecmp?("true")
+  gem "floss_funding", path: "/home/pboling/src/galtzo-floss/floss_funding"
+end
