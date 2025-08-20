@@ -73,7 +73,7 @@ begin
 rescue LoadError
   desc("(stub) floss_funding is unavailable")
   namespace(:floss_funding) do
-    task("install") do
+    task("install") do # rubocop:disable Rake/Desc
       warn("NOTE: floss_funding isn't installed, or is disabled for #{RUBY_VERSION} in the current environment")
     end
   end
