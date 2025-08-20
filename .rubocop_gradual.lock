@@ -1,7 +1,4 @@
 {
-  "Rakefile:3476646639": [
-    [74, 5, 15, "Rake/Desc: Describe the task with `desc` method.", 842824456]
-  ],
   "bin/bundle:2468364380": [
     [66, 5, 20, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 2485198147],
     [78, 5, 74, "Style/InvertibleUnlessCondition: Prefer `if Gem.rubygems_version >= Gem::Version.new(\"2.7.0\")` over `unless Gem.rubygems_version < Gem::Version.new(\"2.7.0\")`.", 2453573257]
