@@ -1,0 +1,126 @@
+#!/usr/bin/env ruby
+# vim: set syntax=ruby
+
+ENV["BUNDLE_GEMFILE"] ||= File.expand_path("../Gemfile", __dir__)
+
+require "rubygems"
+require "bundler/setup"
+
+# Standard library
+require "erb"
+
+# ENV variable control (set in .envrc, or .env.local)
+# BRANCH_RULE_TYPE = jira, or another type of branch rule validation, or false to disable
+# FOOTER_APPEND = true/false append commit message footer
+BRANCH_RULES = {
+  "jira" => /^(?<story_type>(hotfix)|(bug)|(feature)|(candy))\/(?<story_id>\d{8,})-.+\Z/,
+}
+BRANCH_RULE_TYPE = (validate = ENV.fetch("GIT_HOOK_BRANCH_VALIDATE", "false")) && !validate.casecmp?("false") && validate
+
+# Called the "JIRA pattern", because of traditional use with JIRA.
+if (branch_rule = BRANCH_RULES[BRANCH_RULE_TYPE])
+  # branches should be named like:
+  #	<story_type>/<story_id>-explosion-in-the-fudge-factory-spec-suite-fix
+  #	where story type is one of "hotfix", "bug", "feature", "candy"
+  #
+  branch = %x(git branch 2> /dev/null | grep -e ^* | awk '{print $2}')
+  match_data = branch.match(branch_rule)
+  # NOTE: `match` will return nil if match fails, otherwise an instance of MatchData.
+  # If not nil then we are assured matches for both regex capture groups
+  # match_data_or_nil[:story_type] will be one of "hotfix", "bug", "feature", "candy"
+  # match_data_or_nil[:story_id] will be a numeric string
+
+  if !match_data.nil?
+    commit_msg = IO.read(ARGV[0]) # rubocop:disable Security/IoMethods
+    unless commit_msg.include?(match_data[:story_id])
+      commit_msg = <<~EOS
+        #{commit_msg.strip}
+        [#{match_data[:story_type]}][#{match_data[:story_id]}]
+      EOS
+      File.open(ARGV[0], "w") do |file|
+        file.print(commit_msg)
+      end
+    end
+  end
+else
+  # puts "No branch rule configured (set GIT_HOOK_BRANCH_VALIDATE=jira to enforce rules for jira style branch names)"
+end
+
+class GitCommitFooter
+  NAME_ASSIGNMENT_REGEX = /\bname\s*=\s*(["'])([^"']+)\1/.freeze
+  FOOTER_APPEND = ENV.fetch("GIT_HOOK_FOOTER_APPEND", "false").casecmp("true").zero?
+  SENTINEL = ENV["GIT_HOOK_FOOTER_SENTINEL"] # No default to avoid accidental duplicate commit of a footer via ammended commits
+  raise "Set GIT_HOOK_FOOTER_SENTINEL=<footer sentinel> in .env.local (e.g., '⚡️ A message from a fellow meat-based-AI ⚡️')" if FOOTER_APPEND && SENTINEL.nil? || SENTINEL.empty?
+
+  def initialize
+    @pwd = Dir.pwd
+    @gemspecs = Dir["*.gemspec"]
+    @spec = @gemspecs.first
+    @gemspec_path = File.expand_path(@spec, @pwd)
+    @gem_name = parse_gemspec_name || derive_gem_name
+  end
+
+  # Render ERB with binding variables
+  def render
+    ERB.new(template).result(binding)
+  end
+
+  private
+
+  # Lightweight parse for gem name to avoid full Gem::Specification load
+  def parse_gemspec_name
+    begin
+      content = File.read(@gemspec_path)
+      # Look for name assignment patterns like:
+      #   spec.name = "my_gem" OR Gem::Specification.new do |spec|; spec.name = 'my_gem'
+      @name_index = content =~ NAME_ASSIGNMENT_REGEX
+      if @name_index
+        return $2
+      end
+    rescue StandardError
+      # fall through
+    end
+    nil
+  end
+
+  # No-parse derivation of gem name, when parsing gemspec fails
+  def derive_gem_name
+    File.basename(@gemspec_path, ".*") if @gemspec_path
+  end
+
+  # Example
+  #
+  #     ⚡️ A message from a fellow meat-based-AI ⚡️
+  #     I ❤️ working on <%= @gem_name %>.
+  #
+  # The first line is the footer sentinel (which does appear in the commit).
+  # The second line, and any additional, is the main body of the footer.
+  #
+  # The sentinel must be set in an ENV variable (e.g., in your .env.local file):
+  #
+  #   export GIT_HOOK_FOOTER_SENTINEL="⚡️ A message from a fellow meat-based-AI ⚡️"
+  #
+  def template
+    File.read(File.join(ENV["HOME"], ".git-hooks", "footer-template.erb.txt"))
+  end
+end
+
+if GitCommitFooter::FOOTER_APPEND
+  commit_msg = IO.read(ARGV[0]) # rubocop:disable Security/IoMethods
+  if commit_msg.include?(GitCommitFooter::SENTINEL)
+    # This is a commit message that has already been appended
+    # This will happen if the commit message is edited and re-committed
+    # puts "FOOTER_APPEND is true, skipping footer append"
+    exit 0
+  else
+    footer_binding = GitCommitFooter.new
+    # Append footer to the commit message
+    File.open(ARGV[0], "w") do |file|
+      file.print(commit_msg)
+      file.print("\n")
+      file.print(footer_binding.render)
+    end
+  end
+else
+  # puts "GitCommitFooter::FOOTER_APPEND is false, skipping footer append"
+end

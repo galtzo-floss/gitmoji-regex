@@ -1,0 +1,15 @@
+#!/bin/sh
+
+# Fail on error and unset variables
+set -eu
+
+# Determine project root as the parent directory of this hook script
+PROJECT_ROOT="$(CDPATH= cd -- "$(dirname -- "$0")"/.. && pwd)"
+
+# Run the Ruby hook within the direnv context (if available), so ENV from .envrc/.env.local at project root is loaded.
+if command -v direnv >/dev/null 2>&1; then
+  exec direnv exec "$PROJECT_ROOT" "$PROJECT_ROOT/bin/prepare-commit-msg" "$@"
+else
+  # Fallback: run without direnv (ENV from direnv will not be loaded)
+  exec "$PROJECT_ROOT/bin/prepare-commit-msg" "$@"
+fi
