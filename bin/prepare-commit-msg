@@ -31,12 +31,12 @@ if (branch_rule = BRANCH_RULES[BRANCH_RULE_TYPE])
   # match_data_or_nil[:story_id] will be a numeric string
 
   if !match_data.nil?
-    commit_msg = IO.read(ARGV[0]) # rubocop:disable Security/IoMethods
+    commit_msg = File.read(ARGV[0])
     unless commit_msg.include?(match_data[:story_id])
-      commit_msg = <<~EOS
-        #{commit_msg.strip}
-        [#{match_data[:story_type]}][#{match_data[:story_id]}]
-      EOS
+      commit_msg = <<EOS
+#{commit_msg.strip}
+[#{match_data[:story_type]}][#{match_data[:story_id]}]
+EOS
       File.open(ARGV[0], "w") do |file|
         file.print(commit_msg)
       end
@@ -47,10 +47,57 @@ else
 end
 
 class GitCommitFooter
+  GIT_HOOKS_DIR = File.join(ENV["HOME"], ".git-hooks")
+  GIT_HOOKS_FILE = ->(filename) { File.join(GIT_HOOKS_DIR, filename) }
   NAME_ASSIGNMENT_REGEX = /\bname\s*=\s*(["'])([^"']+)\1/.freeze
   FOOTER_APPEND = ENV.fetch("GIT_HOOK_FOOTER_APPEND", "false").casecmp("true").zero?
   SENTINEL = ENV["GIT_HOOK_FOOTER_SENTINEL"] # No default to avoid accidental duplicate commit of a footer via ammended commits
   raise "Set GIT_HOOK_FOOTER_SENTINEL=<footer sentinel> in .env.local (e.g., '⚡️ A message from a fellow meat-based-AI ⚡️')" if FOOTER_APPEND && SENTINEL.nil? || SENTINEL.empty?
+
+  class << self
+    def commit_goalie_path
+      File.join(GIT_HOOKS_FILE.call("commit-subjects-goalie.txt"))
+    end
+
+    # Determine whether the commit subject allows footer append, based on optional goalie file
+    # ~/.git-hooks/commit-subjects-goalie.txt
+    # - If present, only allow appending when the first line of the commit message starts with one of the non-commented prefixes
+    # - If absent, disallow footer
+    def goalie_allows_footer?(subject_line)
+      goalie_path = commit_goalie_path
+      return false unless File.file?(goalie_path)
+
+      prefixes = File.read(goalie_path).lines.map { |l| l.strip }.reject { |l| l.empty? || l.start_with?("#") }
+      # If the file exists but has no usable lines, treat as deny-all per goalie intent
+      return false if prefixes.empty?
+
+      subj = subject_line.to_s.strip
+      prefixes.any? { |prefix| subj.start_with?(prefix) }
+    end
+
+    def render(argv)
+      commit_msg = File.read(argv[0])
+      subject_line = commit_msg.lines.first.to_s
+      if GitCommitFooter::FOOTER_APPEND && goalie_allows_footer?(subject_line)
+        if commit_msg.include?(GitCommitFooter::SENTINEL)
+          # This is a commit message that has already been appended
+          # This will happen if the commit message is edited and re-committed
+          # puts "FOOTER_APPEND is true, skipping footer append"
+          exit(0)
+        else
+          footer_binding = GitCommitFooter.new(argv[0])
+          # Append footer to the commit message
+          File.open(argv[0], "w") do |file|
+            file.print(commit_msg)
+            file.print("\n")
+            file.print(footer_binding.render)
+          end
+        end
+      else
+        # Skipping footer append (either FOOTER_APPEND is false, or goalie did not allow it)
+      end
+    end
+  end
 
   def initialize
     @pwd = Dir.pwd
@@ -101,26 +148,8 @@ class GitCommitFooter
   #   export GIT_HOOK_FOOTER_SENTINEL="⚡️ A message from a fellow meat-based-AI ⚡️"
   #
   def template
-    File.read(File.join(ENV["HOME"], ".git-hooks", "footer-template.erb.txt"))
+    File.read(GIT_HOOKS_FILE.call("footer-template.erb.txt"))
   end
 end
 
-if GitCommitFooter::FOOTER_APPEND
-  commit_msg = IO.read(ARGV[0]) # rubocop:disable Security/IoMethods
-  if commit_msg.include?(GitCommitFooter::SENTINEL)
-    # This is a commit message that has already been appended
-    # This will happen if the commit message is edited and re-committed
-    # puts "FOOTER_APPEND is true, skipping footer append"
-    exit 0
-  else
-    footer_binding = GitCommitFooter.new
-    # Append footer to the commit message
-    File.open(ARGV[0], "w") do |file|
-      file.print(commit_msg)
-      file.print("\n")
-      file.print(footer_binding.render)
-    end
-  end
-else
-  # puts "GitCommitFooter::FOOTER_APPEND is false, skipping footer append"
-end
+GitCommitFooter.render(ARGV)
