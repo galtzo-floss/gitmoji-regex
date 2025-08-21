@@ -33,10 +33,10 @@ if (branch_rule = BRANCH_RULES[BRANCH_RULE_TYPE])
   if !match_data.nil?
     commit_msg = File.read(ARGV[0])
     unless commit_msg.include?(match_data[:story_id])
-      commit_msg = <<EOS
-#{commit_msg.strip}
-[#{match_data[:story_type]}][#{match_data[:story_id]}]
-EOS
+      commit_msg = <<~EOS
+        #{commit_msg.strip}
+        [#{match_data[:story_type]}][#{match_data[:story_id]}]
+      EOS
       File.open(ARGV[0], "w") do |file|
         file.print(commit_msg)
       end
