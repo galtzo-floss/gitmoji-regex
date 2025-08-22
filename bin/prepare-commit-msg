@@ -75,7 +75,7 @@ class GitCommitFooter
       prefixes.any? { |prefix| subj.start_with?(prefix) }
     end
 
-    def render(argv)
+    def render(*argv)
       commit_msg = File.read(argv[0])
       subject_line = commit_msg.lines.first.to_s
       if GitCommitFooter::FOOTER_APPEND && goalie_allows_footer?(subject_line)
@@ -85,7 +85,7 @@ class GitCommitFooter
           # puts "FOOTER_APPEND is true, skipping footer append"
           exit(0)
         else
-          footer_binding = GitCommitFooter.new(argv[0])
+          footer_binding = GitCommitFooter.new
           # Append footer to the commit message
           File.open(argv[0], "w") do |file|
             file.print(commit_msg)
@@ -152,4 +152,4 @@ class GitCommitFooter
   end
 end
 
-GitCommitFooter.render(ARGV)
+GitCommitFooter.render(*ARGV)
