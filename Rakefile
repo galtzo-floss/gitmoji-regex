@@ -1,5 +1,11 @@
 # frozen_string_literal: true
 
+# kettle-jem:freeze
+# To retain chunks of comments & code during gitmoji-regex templating:
+# Wrap custom sections with freeze markers (e.g., as above and below this comment chunk).
+# gitmoji-regex will then preserve content between those markers across template runs.
+# kettle-jem:unfreeze
+
 # Galtzo FLOSS Rakefile v1.0.11 - 2025-08-19
 # Ruby 2.3 (Safe Navigation) or higher required
 #
@@ -675,3 +681,37 @@ namespace :ci do
 end
 
 task default: defaults
+
+# External gems that define tasks - add here!
+require "kettle/dev"
+
+### DUPLICATE DRIFT TASKS
+begin
+  require "kettle/drift"
+  Kettle::Drift.install_tasks
+rescue LoadError
+  desc("(stub) kettle:drift:check is unavailable")
+  task("kettle:drift:check") do
+    warn("NOTE: kettle-drift isn't installed, or is disabled for #{RUBY_VERSION} in the current environment")
+  end
+  desc("(stub) kettle:drift:update is unavailable")
+  task("kettle:drift:update") do
+    warn("NOTE: kettle-drift isn't installed, or is disabled for #{RUBY_VERSION} in the current environment")
+  end
+  desc("(stub) kettle:drift:force_update is unavailable")
+  task("kettle:drift:force_update") do
+    warn("NOTE: kettle-drift isn't installed, or is disabled for #{RUBY_VERSION} in the current environment")
+  end
+  desc("(stub) kettle:drift is unavailable")
+  task("kettle:drift" => "kettle:drift:update")
+end
+
+### TEMPLATING TASKS
+begin
+  require "kettle/jem"
+rescue LoadError
+  desc("(stub) kettle:jem:selftest is unavailable")
+  task("kettle:jem:selftest") do
+    warn("NOTE: kettle-jem isn't installed, or is disabled for #{RUBY_VERSION} in the current environment")
+  end
+end

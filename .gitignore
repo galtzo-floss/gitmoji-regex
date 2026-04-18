@@ -1,9 +1,12 @@
 # Build Artifacts
 /pkg/
+/tmp/*
+!/tmp/.gitignore
 /tmp/
 *.gem
 
 # Bundler
+/vendor/bundle/
 /.bundle/
 /gemfiles/*.lock
 /gemfiles/.bundle/
@@ -16,6 +19,7 @@ Appraisal.*.gemfile.lock
 /coverage/
 /spec/reports/
 /results/
+.output.txt
 
 # Documentation
 /.yardoc/
@@ -24,10 +28,12 @@ Appraisal.*.gemfile.lock
 /doc/
 
 # Ruby Version Managers (RVM, rbenv, etc)
+# Ignored because we currently use mise.toml
 # Ignored because we currently use .tool-versions
 .rvmrc
 .ruby-version
 .ruby-gemset
+.tool-versions
 
 # Benchmarking
 /measurement/
@@ -35,6 +41,7 @@ Appraisal.*.gemfile.lock
 # Debugger detritus
 .byebug_history
 
+# Local environment overrides (KEY=value, loaded by mise via dotenvy)
 # direnv - brew install direnv
 .env.local
 

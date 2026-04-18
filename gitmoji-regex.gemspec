@@ -1,5 +1,11 @@
 # frozen_string_literal: true
 
+# kettle-jem:freeze
+# To retain chunks of comments & code during gitmoji-regex templating:
+# Wrap custom sections with freeze markers (e.g., as above and below this comment chunk).
+# gitmoji-regex will then preserve content between those markers across template runs.
+# kettle-jem:unfreeze
+
 gem_version =
   if RUBY_VERSION >= "3.1" # rubocop:disable Gemspec/RubyVersionGlobalsUsage
     # Loading Version into an anonymous module allows version.rb to get code coverage from SimpleCov!
@@ -19,19 +25,18 @@ gem_version =
 Gem::Specification.new do |spec|
   spec.name = "gitmoji-regex"
   spec.version = gem_version
-  spec.authors = ["Peter Boling"]
+  spec.authors = ["Peter H. Boling", "Aboling0"]
   spec.email = ["floss@galtzo.com"]
 
   spec.summary = "😜 A regular expression for Gitmoji symbols"
-  spec.description = "😜 A regular expression matching Gitmoji (a subset of Unicode Emoji) symbols" \
-    "Fund overlooked open source projects - bottom of stack, dev/test dependencies: floss-funding.dev"
+  spec.description = "😜 A regular expression matching Gitmoji (a subset of Unicode Emoji) symbolsFund overlooked open source projects - bottom of stack, dev/test dependencies: floss-funding.dev"
   spec.homepage = "https://github.com/galtzo-floss/gitmoji-regex"
-  spec.license = "MIT"
+  spec.licenses = ["MIT"]
   spec.required_ruby_version = ">= 2.3.0"
 
   # Linux distros often package gems and securely certify them independent
   #   of the official RubyGem certification process. Allowed via ENV["SKIP_GEM_SIGNING"]
-  # Ref: https://gitlab.com/oauth-xx/version_gem/-/issues/3
+  # Ref: https://gitlab.com/ruby-oauth/version_gem/-/issues/3
   # Hence, only enable signing if `SKIP_GEM_SIGNING` is not set in ENV.
   # See CONTRIBUTING.md
   unless ENV.include?("SKIP_GEM_SIGNING")
@@ -47,7 +52,7 @@ Gem::Specification.new do |spec|
     end
   end
 
-  spec.metadata["homepage_uri"] = "https://#{spec.name.tr("_", "-")}.galtzo.com/"
+  spec.metadata["homepage_uri"] = "https://gitmoji-regex.galtzo.com/"
   spec.metadata["source_code_uri"] = "#{spec.homepage}/tree/v#{spec.version}"
   spec.metadata["changelog_uri"] = "#{spec.homepage}/blob/v#{spec.version}/CHANGELOG.md"
   spec.metadata["bug_tracker_uri"] = "#{spec.homepage}/issues"
@@ -63,21 +68,21 @@ Gem::Specification.new do |spec|
     # Splats (alphabetical)
     "lib/**/*.rb",
     "src/gitmojis.json",
+    "lib/**/*.rake",
+    # Signatures
+    "sig/**/*.rbs",
   ]
+
   # Automatically included with gem package, no need to list again in files.
   spec.extra_rdoc_files = Dir[
-    # Splats (alphabetical)
-    "checksums/**/*.sha256",
-    "checksums/**/*.sha512",
-    "sig/**/*.rbs",
     # Files (alphabetical)
     "CHANGELOG.md",
     "CITATION.cff",
     "CODE_OF_CONDUCT.md",
     "CONTRIBUTING.md",
+    "FUNDING.md",
     "LICENSE.txt",
     "README.md",
-    "REEK",
     "RUBOCOP.md",
     "SECURITY.md",
   ]
@@ -85,55 +90,84 @@ Gem::Specification.new do |spec|
     "--title",
     "#{spec.name} - #{spec.summary}",
     "--main",
-    "checksums/**/*.sha256",
-    "checksums/**/*.sha512",
-    "sig/**/*.rbs",
-    "CHANGELOG.md",
-    "CITATION.cff",
-    "CODE_OF_CONDUCT.md",
-    "CONTRIBUTING.md",
-    "LICENSE.txt",
     "README.md",
-    "REEK",
-    "RUBOCOP.md",
-    "SECURITY.md",
+    "--exclude",
+    "^sig/",
     "--line-numbers",
     "--inline-source",
     "--quiet",
   ]
   spec.require_paths = ["lib"]
   spec.bindir = "exe"
-  # files listed are relative paths from bindir above.
+  # Listed files are the relative paths from bindir above.
   spec.executables = []
 
-  spec.add_dependency("version_gem", "~> 1.1", ">= 1.1.8")                     # ruby >= 2.2
+  # Utilities
+  spec.add_dependency("version_gem", "~> 1.1", ">= 1.1.9")              # ruby >= 2.2.0
 
   # NOTE: It is preferable to list development dependencies in the gemspec due to increased
-  #       visibility and discoverability on RubyGems.org.
+  #       visibility and discoverability.
   #       However, development dependencies in gemspec will install on
   #       all versions of Ruby that will run in CI.
-  #       This gem, and its gemspec runtime dependencies, will install on Ruby down to 2.4.x.
-  #       This gem, and its gemspec development dependencies, will install on Ruby down to 2.4.x.
+  #       This gem, and its gemspec runtime dependencies, will install on Ruby down to 2.3.0.
+  #       This gem, and its gemspec development dependencies, will install on Ruby down to 2.3.0.
   #       Thus, dev dependencies in gemspec must have
   #
-  #       required_ruby_version ">= 2.4" (or lower)
+  #       required_ruby_version ">= 2.3.0" (or lower)
   #
   #       Development dependencies that require strictly newer Ruby versions should be in a "gemfile",
   #       and preferably a modular one (see gemfiles/modular/*.gemfile).
 
-  # Release Tasks
-  spec.add_development_dependency("stone_checksums", "~> 1.0")                # ruby >= 2.2.0
+spec.add_development_dependency("kettle-drift")
 
-  ### Testing
-  spec.add_development_dependency("appraisal2", "~> 3.0")                     # ruby >= 1.8.7, for testing against multiple versions of dependencies
+  # Dev, Test, & Release Tasks
+  spec.add_development_dependency("kettle-dev", "~> 2.0")                  # ruby >= 2.3.0
+
+  # Security
+  spec.add_development_dependency("bundler-audit", "~> 0.9.3")                      # ruby >= 2.0.0
+  #       visibility and discoverability on RubyGems.org.
+  #       This gem, and its gemspec runtime dependencies, will install on Ruby down to 2.4.x.
+  #       This gem, and its gemspec development dependencies, will install on Ruby down to 2.4.x.
+  #       required_ruby_version ">= 2.4" (or lower)
+
+  # Release Tasks
+  spec.add_development_dependency("stone_checksums", "~> 1.0", ">= 1.0.3")          # ruby >= 2.2.0
+
+  # Git integration (optional)
+  # The 'git' gem is optional; gitmoji-regex falls back to shelling out to `git` if it is not present.
+  # The current release of the git gem depends on activesupport, which makes it too heavy to depend on directly
+  # spec.add_dependency("git", ">= 1.19.1")                               # ruby >= 2.3
+
+  # Development tasks
+  # The cake is a lie. erb v2.2, the oldest release, was never compatible with Ruby 2.3.
+  # This means we have no choice but to use the erb that shipped with Ruby 2.3
+  # /opt/hostedtoolcache/Ruby/2.3.8/x64/lib/ruby/gems/2.3.0/gems/erb-2.2.2/lib/erb.rb:670:in `prepare_trim_mode': undefined method `match?' for "-":String (NoMethodError)
+  # spec.add_development_dependency("erb", ">= 2.2")                                  # ruby >= 2.3.0, not SemVer, old rubies get dropped in a patch.
+
+  # HTTP recording for deterministic specs
+  # In Ruby 3.5 (HEAD) the CGI library has been pared down, so we also need to depend on gem "cgi" for ruby@head
+  # This is done in the "head" appraisal.
+  # See: https://github.com/vcr/vcr/issues/1057
+  # spec.add_development_dependency("vcr", ">= 4")                        # 6.0 claims to support ruby >= 2.3, but fails on ruby 2.4
+  # spec.add_development_dependency("webmock", ">= 3")                    # Last version to support ruby >= 2.3
+  # Testing
+  spec.add_development_dependency("appraisal2", "~> 3.0", ">= 3.0.6")               # ruby >= 1.8.7, for testing against multiple versions of dependencies
+  spec.add_development_dependency("kettle-test", "~> 2.0", ">= 2.0.0")              # ruby >= 2.3
+
+  # Releasing
+  spec.add_development_dependency("ruby-progressbar", "~> 1.13")                    # ruby >= 0
   spec.add_development_dependency("rspec-benchmark", "~> 0.6")
   spec.add_development_dependency("rspec-block_is_expected", "~> 1.0")        # ruby >= 1.8.7, for block_is_expected.to syntax
   spec.add_development_dependency("rspec_junit_formatter", "~> 0.6")          # ruby >= 2.3.0, for GitLab Test Result Parsing
   spec.add_development_dependency("rspec-stubbed_env", "~> 1.0")              # ruby >= 2.3.0, helper for stubbing ENV in specs
   spec.add_development_dependency("silent_stream", "~> 1.0", ">= 1.0.11")     # ruby >= 2.3.0, for output capture
 
-  # Development tasks
   spec.add_development_dependency("http", ">= 4.4.1", "< 6")                  # ruby >= 2.3, v5 is ruby >= 2.6
   spec.add_development_dependency("json", ">= 2.7.6", "~> 2.7")               # ruby >= 2.3, not semver, later v2 minors drop Rubies
-  spec.add_development_dependency("rake", "~> 13.0")                          # ruby >= 2.2
+
+  # Tasks
+  spec.add_development_dependency("rake", "~> 13.0")                                # ruby >= 2.2.0
+
+  # Debugging
+  spec.add_development_dependency("require_bench", "~> 1.0", ">= 1.0.4")            # ruby >= 2.2.0
 end

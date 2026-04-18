@@ -8,6 +8,7 @@ on:
   push:
     branches:
       - 'main'
+      - '*-stable'
     tags:
       - '!*' # Do not execute on tags
   pull_request:
@@ -64,15 +65,26 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
 
       - name: Setup Ruby & RubyGems
-        uses: ruby/setup-ruby@v1
+        uses: ruby/setup-ruby@e65c17d16e57e481586a6a5a0282698790062f92 # v1.300.0
         with:
           ruby-version: ${{ matrix.ruby }}
           rubygems: ${{ matrix.rubygems }}
           bundler: ${{ matrix.bundler }}
           bundler-cache: false
+      - name: "[Attempt 1] Appraisal for ${{ matrix.ruby }}@${{ matrix.appraisal }}"
+        id: bundleAppraisalAttempt1
+        run: bundle exec appraisal ${{ matrix.appraisal }} install
+        # Continue to the next step on failure
+        continue-on-error: true
+      # Effectively an automatic retry of the previous step.
+      - name: "[Attempt 2] Appraisal for ${{ matrix.ruby }}@${{ matrix.appraisal }}"
+        id: bundleAppraisalAttempt2
+        # If bundleAppraisalAttempt1 failed, try again here; Otherwise skip.
+        if: ${{ steps.bundleAppraisalAttempt1.outcome == 'failure' }}
+        run: bundle exec appraisal ${{ matrix.appraisal }} install
 
       # Raw `bundle` will use the BUNDLE_GEMFILE set to matrix.gemfile (i.e. Appraisal.root)
       # We need to do this first to get appraisal installed.
