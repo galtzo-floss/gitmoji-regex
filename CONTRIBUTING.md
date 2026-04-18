@@ -33,6 +33,23 @@ bin/rake appraisal:update
 
 When adding an appraisal to CI check the [runner tool cache][🏃‍♂️runner-tool-cache] to see which runner to use.
 
+## Refresh Gitmoji Reference
+
+When the upstream gitmoji catalog changes, refresh the vendored reference and regenerate the regex with:
+
+```console
+bin/refresh
+```
+
+This script fetches `Gitmoji::Regex::Reference::GITMOJI_REFERENCE`, updates `src/gitmojis.json`,
+and rewrites `lib/gitmoji/regex.rb` from `src/regex.rb`.
+
+After running it:
+
+1. Review the diff in `src/gitmojis.json` and `lib/gitmoji/regex.rb`
+2. Run `bin/rake`
+3. Add a note to `CHANGELOG.md` for any newly added upstream gitmoji
+
 ## The Reek List
 
 Take a look at the `reek` list which is the file called `REEK` and find something to improve.

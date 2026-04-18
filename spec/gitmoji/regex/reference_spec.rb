@@ -79,6 +79,7 @@ RSpec.describe Gitmoji::Regex::Reference do
       🧵
       🦺
       ✈️
+      🦖
     ]
   end
 

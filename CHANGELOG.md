@@ -6,7 +6,9 @@ and this project adheres to [Semantic Versioning v2](https://semver.org/spec/v2.
 
 ## [Unreleased]
 ### Added
+- New gitmoji "🦖"
 ### Changed
+- Documented the `bin/refresh` maintainer workflow for syncing the upstream gitmoji reference
 ### Deprecated
 ### Removed
 ### Fixed
