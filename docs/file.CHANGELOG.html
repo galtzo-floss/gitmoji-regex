@@ -6,13 +6,13 @@
 <title>
   File: CHANGELOG
   
-    &mdash; Documentation by YARD 0.9.37
+    &mdash; Documentation by YARD 0.9.44
   
 </title>
 
-  <link rel="stylesheet" href="css/style.css" type="text/css" />
+  <link rel="stylesheet" href="css/style.css" type="text/css">
 
-  <link rel="stylesheet" href="css/common.css" type="text/css" />
+  <link rel="stylesheet" href="css/common.css" type="text/css">
 
 <script type="text/javascript">
   pathId = "CHANGELOG";
@@ -27,6 +27,8 @@
 
   </head>
   <body>
+    <div id="main_progress" aria-hidden="true"></div>
+
     <div class="nav_wrap">
       <iframe id="nav" src="file_list.html?1"></iframe>
       <div id="resizer"></div>
@@ -58,33 +60,59 @@
       </div>
 
       <div id="content"><div id='filecontents'><h1 id="changelog">Changelog</h1>
+
+<p><a href="https://semver.org/spec/v2.0.0.html"><img src="https://img.shields.io/badge/semver-2.0.0-FFDD67.svg?style=flat" alt="SemVer 2.0.0"></a> <a href="https://keepachangelog.com/en/1.0.0/"><img src="https://img.shields.io/badge/keep--a--changelog-1.0.0-FFDD67.svg?style=flat" alt="Keep-A-Changelog 1.0.0"></a></p>
+
 <p>All notable changes to this project will be documented in this file.</p>
 
-<p>The format is based on <a href="https://keepachangelog.com/en/1.0.0/">Keep a Changelog v1</a>,<br>
-and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semantic Versioning v2</a>.</p>
+<p>The format is based on <a href="https://keepachangelog.com/en/1.0.0/">Keep a Changelog</a>,<br>
+and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semantic Versioning</a>,<br>
+and <a href="https://tom.preston-werner.com/2022/05/23/major-version-numbers-are-not-sacred.html">yes</a>, platform and engine support are part of the <a href="https://github.com/semver/semver/issues/716#issuecomment-869336139">public API</a>.<br>
+Please file a bug if you notice a violation of semantic versioning.</p>
 
 <h2 id="unreleased"><a href="https://github.com/galtzo-floss/gitmoji-regex/compare/v1.0.3...HEAD">Unreleased</a></h2>
+
 <h3 id="added">Added</h3>
+
+<ul>
+  <li>New gitmoji “🦖” (<code>:t-rex:</code>) for code that adds backwards compatibility</li>
+</ul>
+
 <h3 id="changed">Changed</h3>
+
+<ul>
+  <li>Documented the <code>bin/refresh</code> maintainer workflow for syncing the upstream gitmoji reference</li>
+</ul>
+
 <h3 id="deprecated">Deprecated</h3>
+
 <h3 id="removed">Removed</h3>
+
 <h3 id="fixed">Fixed</h3>
+
 <h3 id="security">Security</h3>
 
 <h2 id="103---2025-08-20">
 <a href="https://github.com/galtzo-floss/gitmoji-regex/compare/v1.0.2...v1.0.3">1.0.3</a> - 2025-08-20</h2>
+
 <ul>
   <li>TAG: <a href="https://gitlab.com/galtzo-floss/gitmoji-regex/-/tags/v1.0.3">v1.0.3</a>
 </li>
   <li>COVERAGE: 100.00% – 57/57 lines in 3 files</li>
   <li>BRANCH COVERAGE: 100.00% – 4/4 branches in 3 files</li>
-  <li>100.00% documented
-    <h3 id="added-1">Added</h3>
-  </li>
+  <li>100.00% documented</li>
+</ul>
+
+<h3 id="added-1">Added</h3>
+
+<ul>
   <li>New gitmoji “✈️”</li>
-  <li>appraisal2 for improved testing platform coverage in CI
-    <h3 id="changed-1">Changed</h3>
-  </li>
+  <li>appraisal2 for improved testing platform coverage in CI</li>
+</ul>
+
+<h3 id="changed-1">Changed</h3>
+
+<ul>
   <li>gem dependencies for local development</li>
   <li>centralized logos to logos.galtzo.com</li>
   <li>scripts to enforce git commit message style</li>
@@ -92,31 +120,47 @@ and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semant
 
 <h2 id="102---2023-05-30">
 <a href="https://github.com/galtzo-floss/gitmoji-regex/compare/v1.0.1...v1.0.2">1.0.2</a> - 2023-05-30</h2>
+
 <ul>
   <li>TAG: <a href="https://gitlab.com/galtzo-floss/gitmoji-regex/-/tags/v1.0.2">v1.0.2</a>
-    <h3 id="added-2">Added</h3>
-  </li>
+</li>
+</ul>
+
+<h3 id="added-2">Added</h3>
+
+<ul>
   <li>New gitmoji “🧵”</li>
   <li>New gitmoji “🦺”</li>
   <li>Releases are now signed</li>
-  <li>Releases now include SHA256 and SHA512 checksums
-    <h3 id="fixed-1">Fixed</h3>
-  </li>
-  <li>100% branch &amp; line test coverage
-    <h3 id="changed-2">Changed</h3>
-  </li>
+  <li>Releases now include SHA256 and SHA512 checksums</li>
+</ul>
+
+<h3 id="fixed-1">Fixed</h3>
+
+<ul>
+  <li>100% branch &amp; line test coverage</li>
+</ul>
+
+<h3 id="changed-2">Changed</h3>
+
+<ul>
   <li>Primary source forge moved from GitHub to <a href="https://git.sr.ht/~galtzo/gitmoji-regex">Source Hut</a>
 </li>
 </ul>
 
 <h2 id="101---2022-06-24">
 <a href="https://github.com/galtzo-floss/gitmoji-regex/compare/v1.0.0...v1.0.1">1.0.1</a> - 2022-06-24</h2>
+
 <h3 id="added-3">Added</h3>
+
 <ul>
   <li>bin stubs for development</li>
-  <li>Improved contributing guidelines
-    <h3 id="fixed-2">Fixed</h3>
-  </li>
+  <li>Improved contributing guidelines</li>
+</ul>
+
+<h3 id="fixed-2">Fixed</h3>
+
+<ul>
   <li>Updated Template <code>src/regex.rb</code>
 </li>
   <li>CI Build improvements</li>
@@ -124,44 +168,60 @@ and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semant
 
 <h2 id="100---2022-06-24">
 <a href="https://github.com/galtzo-floss/gitmoji-regex/compare/v0.1.3...v1.0.0">1.0.0</a> - 2022-06-24</h2>
+
 <h3 id="added-4">Added</h3>
+
 <ul>
   <li>New gitmoji “💸”</li>
-  <li>Gitmoji::Regex::Version is introspectable
-    <h3 id="changed-3">Changed</h3>
-  </li>
+  <li>Gitmoji::Regex::Version is introspectable</li>
+</ul>
+
+<h3 id="changed-3">Changed</h3>
+
+<ul>
   <li>Gitmoji::Regex::VERSION is now Gitmoji::Regex::Version::VERSION</li>
 </ul>
 
 <h2 id="013---2022-03-30">
 <a href="https://github.com/galtzo-floss/gitmoji-regex/compare/v0.1.2...v0.1.3">0.1.3</a> - 2022-03-30</h2>
+
 <h3 id="added-5">Added</h3>
+
 <ul>
   <li>Documentation</li>
-  <li>Badges
-    <h3 id="fixed-3">Fixed</h3>
-  </li>
+  <li>Badges</li>
+</ul>
+
+<h3 id="fixed-3">Fixed</h3>
+
+<ul>
   <li>Code Coverage</li>
   <li>Changelog URLs</li>
 </ul>
 
 <h2 id="012---2022-03-29">
 <a href="https://github.com/galtzo-floss/gitmoji-regex/compare/v0.1.1...v0.1.2">0.1.2</a> - 2022-03-29</h2>
+
 <h3 id="added-6">Added</h3>
+
 <ul>
   <li>Badges and Logos</li>
 </ul>
 
 <h2 id="011---2022-03-28">
 <a href="https://github.com/galtzo-floss/gitmoji-regex/compare/v0.1.0...v0.1.1">0.1.1</a> - 2022-03-28</h2>
+
 <h3 id="added-7">Added</h3>
+
 <ul>
   <li>Usage documentation</li>
 </ul>
 
 <h2 id="010---2022-03-28">
 <a href="https://github.com/galtzo-floss/gitmoji-regex/compare/e71c6c3dad5bfd59ae2509531eaea3a16e21cb63...v0.1.0">0.1.0</a> - 2022-03-28</h2>
+
 <h3 id="added-8">Added</h3>
+
 <ul>
   <li>Initial release</li>
 </ul>
@@ -169,9 +229,9 @@ and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semant
 </div></div>
 
       <div id="footer">
-  Generated on Wed Aug 20 23:51:04 2025 by
+  Generated on Tue May 26 14:49:38 2026 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.37 (ruby-3.4.5).
+  0.9.44 (ruby-4.0.5).
 </div>
 
     </div>

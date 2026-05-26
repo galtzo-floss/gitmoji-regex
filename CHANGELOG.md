@@ -20,11 +20,7 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Added
 
-- New gitmoji "🦖" (`:t-rex:`) for code that adds backwards compatibility
-
 ### Changed
-
-- Documented the `bin/refresh` maintainer workflow for syncing the upstream gitmoji reference
 
 ### Deprecated
 
@@ -33,6 +29,21 @@ Please file a bug if you notice a violation of semantic versioning.
 ### Fixed
 
 ### Security
+
+## [1.0.4] - 2026-05-26
+
+- TAG: [v1.0.4][1.0.4t]
+- COVERAGE: 100.00% -- 58/58 lines in 3 files
+- BRANCH COVERAGE: 100.00% -- 4/4 branches in 3 files
+- 90.00% documented
+
+### Added
+
+- New gitmoji "🦖" (`:t-rex:`) for code that adds backwards compatibility
+
+### Changed
+
+- Documented the `bin/refresh` maintainer workflow for syncing the upstream gitmoji reference
 
 ## [1.0.3] - 2025-08-20
 
@@ -124,11 +135,13 @@ Please file a bug if you notice a violation of semantic versioning.
 
 - Initial release
 
-[Unreleased]: https://github.com/galtzo-floss/gitmoji-regex/compare/v1.0.3...HEAD
+[Unreleased]: https://github.com/galtzo-floss/gitmoji-regex/compare/v1.0.4...HEAD
+[1.0.4]: https://github.com/galtzo-floss/gitmoji-regex/compare/v1.0.3...v1.0.4
+[1.0.4t]: https://github.com/galtzo-floss/gitmoji-regex/releases/tag/v1.0.4
 [1.0.3]: https://github.com/galtzo-floss/gitmoji-regex/compare/v1.0.2...v1.0.3
-[1.0.3t]: https://gitlab.com/galtzo-floss/gitmoji-regex/-/tags/v1.0.3
+[1.0.3t]: https://github.com/galtzo-floss/gitmoji-regex/releases/tag/v1.0.3
 [1.0.2]: https://github.com/galtzo-floss/gitmoji-regex/compare/v1.0.1...v1.0.2
-[1.0.2t]: https://gitlab.com/galtzo-floss/gitmoji-regex/-/tags/v1.0.2
+[1.0.2t]: https://github.com/galtzo-floss/gitmoji-regex/releases/tag/v1.0.2
 [1.0.1]: https://github.com/galtzo-floss/gitmoji-regex/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/galtzo-floss/gitmoji-regex/compare/v0.1.3...v1.0.0
 [0.1.3]: https://github.com/galtzo-floss/gitmoji-regex/compare/v0.1.2...v0.1.3
