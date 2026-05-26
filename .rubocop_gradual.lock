@@ -1,6 +1,8 @@
 {
-  "bin/bundle:2468364380": [
-    [66, 5, 20, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 2485198147],
-    [78, 5, 74, "Style/InvertibleUnlessCondition: Prefer `if Gem.rubygems_version >= Gem::Version.new(\"2.7.0\")` over `unless Gem.rubygems_version < Gem::Version.new(\"2.7.0\")`.", 2453573257]
+  "gitmoji-regex.gemspec:1440755583": [
+    [172, 3, 58, "Gemspec/OrderedDependencies: Dependencies should be sorted in an alphabetical order within their section of the gemspec. Dependency `http` should appear before `silent_stream`.", 3792955954]
+  ],
+  "sig/gitmoji/regex.rbs:1759842005": [
+    [25, 7, 7, "RBS/Layout/EmptyLinesAroundAccessModifier: Keep a blank line before and after `<private>`.", 1807578568]
   ]
 }

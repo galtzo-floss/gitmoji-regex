@@ -6,4 +6,3 @@ module Gitmoji
     VERSION: String
   end
 end
-
