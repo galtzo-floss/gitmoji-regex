@@ -20,7 +20,7 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Added
 
-- New gitmoji "🦖"
+- New gitmoji "🦖" (`:t-rex:`) for code that adds backwards compatibility
 
 ### Changed
 
