@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require "version_gem"
+require_relative "regex/version"
 
 require "gitmoji/regex/version"
 # Reference file isn't needed at runtime.
