@@ -109,6 +109,8 @@ RSpec.describe Gitmoji::Regex::Reference do
   end
 
   it "Cached pattern is current" do
+    skip "JRuby HTTP can fail to read GitHub response headers in CI" if RUBY_ENGINE == "jruby"
+
     expect(instance.cached_pattern).to eq(instance.fetched_pattern)
   end
 

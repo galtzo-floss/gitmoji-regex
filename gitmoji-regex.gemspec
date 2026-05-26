@@ -170,5 +170,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency("rspec-stubbed_env", "~> 1.0")              # ruby >= 2.3.0, helper for stubbing ENV in specs
   spec.add_development_dependency("silent_stream", "~> 1.0", ">= 1.0.11")     # ruby >= 2.3.0, for output capture
   spec.add_development_dependency("http", ">= 4.4.1", "< 6")                  # ruby >= 2.3, v5 is ruby >= 2.6
-  spec.add_development_dependency("json", ">= 2.7.6", "~> 2.7")               # ruby >= 2.3, not semver, later v2 minors drop Rubies
+  spec.add_development_dependency("json", "~> 2.7.6")                         # ruby >= 2.3, not semver, later v2 minors drop Rubies
 end
