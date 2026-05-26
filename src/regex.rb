@@ -3,7 +3,6 @@
 require "version_gem"
 require_relative "regex/version"
 
-require "gitmoji/regex/version"
 # Reference file isn't needed at runtime.
 #   require "gitmoji/regex/reference"
 # Used to update the source of the gem (literally this file) when a new Gitmoji is added to the official list.
