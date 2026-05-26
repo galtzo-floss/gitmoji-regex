@@ -3,7 +3,7 @@
 module Gitmoji
   module Regex
     module Version
-      VERSION = "1.0.4"
+      VERSION = "2.0.0"
     end
     VERSION = Version::VERSION # Traditional Constant Location
   end

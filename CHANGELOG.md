@@ -30,9 +30,9 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Security
 
-## [1.0.4] - 2026-05-26
+## [2.0.0] - 2026-05-26
 
-- TAG: [v1.0.4][1.0.4t]
+- TAG: [v2.0.0][2.0.0t]
 - COVERAGE: 100.00% -- 58/58 lines in 3 files
 - BRANCH COVERAGE: 100.00% -- 4/4 branches in 3 files
 - 90.00% documented
@@ -44,6 +44,10 @@ Please file a bug if you notice a violation of semantic versioning.
 ### Changed
 
 - Documented the `bin/refresh` maintainer workflow for syncing the upstream gitmoji reference
+
+### Removed
+
+- Support for Ruby 2.3
 
 ## [1.0.3] - 2025-08-20
 
@@ -135,7 +139,9 @@ Please file a bug if you notice a violation of semantic versioning.
 
 - Initial release
 
-[Unreleased]: https://github.com/galtzo-floss/gitmoji-regex/compare/v1.0.4...HEAD
+[Unreleased]: https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.0...HEAD
+[2.0.0]: https://github.com/galtzo-floss/gitmoji-regex/compare/v1.0.3...v2.0.0
+[2.0.0t]: https://github.com/galtzo-floss/gitmoji-regex/releases/tag/v2.0.0
 [1.0.4]: https://github.com/galtzo-floss/gitmoji-regex/compare/v1.0.3...v1.0.4
 [1.0.4t]: https://github.com/galtzo-floss/gitmoji-regex/releases/tag/v1.0.4
 [1.0.3]: https://github.com/galtzo-floss/gitmoji-regex/compare/v1.0.2...v1.0.3
