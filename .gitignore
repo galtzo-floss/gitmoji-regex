@@ -2,7 +2,6 @@
 /pkg/
 /tmp/*
 !/tmp/.gitignore
-/tmp/
 *.gem
 
 # Bundler
@@ -29,7 +28,6 @@ Appraisal.*.gemfile.lock
 
 # Ruby Version Managers (RVM, rbenv, etc)
 # Ignored because we currently use mise.toml
-# Ignored because we currently use .tool-versions
 .rvmrc
 .ruby-version
 .ruby-gemset
@@ -42,7 +40,6 @@ Appraisal.*.gemfile.lock
 .byebug_history
 
 # Local environment overrides (KEY=value, loaded by mise via dotenvy)
-# direnv - brew install direnv
 .env.local
 
 # OS Detritus

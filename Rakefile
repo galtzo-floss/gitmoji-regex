@@ -680,10 +680,7 @@ namespace :ci do
   # rubocop:enable ThreadSafety/NewThread
 end
 
-task default: defaults
-
 # External gems that define tasks - add here!
-require "kettle/dev"
 
 ### DUPLICATE DRIFT TASKS
 begin
@@ -709,9 +706,24 @@ end
 ### TEMPLATING TASKS
 begin
   require "kettle/jem"
+  Kettle::Jem.install_tasks
 rescue LoadError
   desc("(stub) kettle:jem:selftest is unavailable")
   task("kettle:jem:selftest") do
     warn("NOTE: kettle-jem isn't installed, or is disabled for #{RUBY_VERSION} in the current environment")
   end
+end
+
+# Define a base default task early so other files can enhance it.
+desc "Default tasks aggregator"
+
+task :default do
+  puts "Default task complete."
+end
+
+begin
+  require "kettle/dev"
+  Kettle::Dev.install_tasks unless Kettle::Dev::RUNNING_AS == "rake"
+rescue LoadError
+  warn("NOTE: kettle-dev isn't installed, or is disabled for #{RUBY_VERSION} in the current environment")
 end

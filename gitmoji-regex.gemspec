@@ -1,3 +1,4 @@
+# coding: utf-8
 # frozen_string_literal: true
 
 # kettle-jem:freeze
@@ -7,7 +8,7 @@
 # kettle-jem:unfreeze
 
 gem_version =
-  if RUBY_VERSION >= "3.1" # rubocop:disable Gemspec/RubyVersionGlobalsUsage
+  if Gem.ruby_version >= Gem::Version.new("3.1")
     # Loading Version into an anonymous module allows version.rb to get code coverage from SimpleCov!
     # See: https://github.com/simplecov-ruby/simplecov/issues/557#issuecomment-2630782358
     # See: https://github.com/panorama-ed/memo_wise/pull/397
@@ -28,11 +29,11 @@ Gem::Specification.new do |spec|
   spec.authors = ["Peter H. Boling", "Aboling0"]
   spec.email = ["floss@galtzo.com"]
 
-  spec.summary = "😜 A regular expression for Gitmoji symbols"
-  spec.description = "😜 A regular expression matching Gitmoji (a subset of Unicode Emoji) symbolsFund overlooked open source projects - bottom of stack, dev/test dependencies: floss-funding.dev"
+  spec.summary = "🍲 A regular expression for Gitmoji symbols"
+  spec.description = "🍲 A regular expression matching Gitmoji (a subset of Unicode Emoji) symbolsFund overlooked open source projects - bottom of stack, dev/test dependencies: floss-funding.dev"
   spec.homepage = "https://github.com/galtzo-floss/gitmoji-regex"
   spec.licenses = ["MIT"]
-  spec.required_ruby_version = ">= 2.3.0"
+  spec.required_ruby_version = ">= 2.4"
 
   # Linux distros often package gems and securely certify them independent
   #   of the official RubyGem certification process. Allowed via ENV["SKIP_GEM_SIGNING"]
@@ -52,7 +53,7 @@ Gem::Specification.new do |spec|
     end
   end
 
-  spec.metadata["homepage_uri"] = "https://gitmoji-regex.galtzo.com/"
+  spec.metadata["homepage_uri"] = "https://structuredmerge.org"
   spec.metadata["source_code_uri"] = "#{spec.homepage}/tree/v#{spec.version}"
   spec.metadata["changelog_uri"] = "#{spec.homepage}/blob/v#{spec.version}/CHANGELOG.md"
   spec.metadata["bug_tracker_uri"] = "#{spec.homepage}/issues"
@@ -63,14 +64,22 @@ Gem::Specification.new do |spec|
   spec.metadata["discord_uri"] = "https://discord.gg/3qme4XHNKN"
   spec.metadata["rubygems_mfa_required"] = "true"
 
+  enumerate_package_files = lambda do |root|
+    Dir.glob(File.join(root, "**", "*"), File::FNM_DOTMATCH).select do |path|
+      File.file?(path) && ![".", ".."].include?(File.basename(path))
+    end
+  end
+
   # Specify which files are part of the released package.
-  spec.files = Dir[
-    # Splats (alphabetical)
-    "lib/**/*.rb",
-    "src/gitmojis.json",
-    "lib/**/*.rake",
+  spec.files = [
+    # Code / tasks / data (NOTE: exe/ is specified via spec.bindir and spec.executables below)
+    *enumerate_package_files.call("lib"),
+    # Executables and executable support scripts
+    *enumerate_package_files.call("exe"),
+    # Public certs for gem signing
+    *enumerate_package_files.call("certs"),
     # Signatures
-    "sig/**/*.rbs",
+    *enumerate_package_files.call("sig"),
   ]
 
   # Automatically included with gem package, no need to list again in files.
@@ -81,7 +90,7 @@ Gem::Specification.new do |spec|
     "CODE_OF_CONDUCT.md",
     "CONTRIBUTING.md",
     "FUNDING.md",
-    "LICENSE.txt",
+    "LICENSE.md",
     "README.md",
     "RUBOCOP.md",
     "SECURITY.md",
@@ -97,10 +106,10 @@ Gem::Specification.new do |spec|
     "--inline-source",
     "--quiet",
   ]
-  spec.require_paths = ["lib"]
   spec.bindir = "exe"
   # Listed files are the relative paths from bindir above.
   spec.executables = []
+  spec.require_paths = ["lib"]
 
   # Utilities
   spec.add_dependency("version_gem", "~> 1.1", ">= 1.1.9")              # ruby >= 2.2.0
@@ -109,28 +118,33 @@ Gem::Specification.new do |spec|
   #       visibility and discoverability.
   #       However, development dependencies in gemspec will install on
   #       all versions of Ruby that will run in CI.
-  #       This gem, and its gemspec runtime dependencies, will install on Ruby down to 2.3.0.
-  #       This gem, and its gemspec development dependencies, will install on Ruby down to 2.3.0.
+  #       This gem, and its gemspec runtime dependencies, will install on Ruby down to 2.4.
+  #       This gem, and its gemspec development dependencies, will install on Ruby down to 2.4.
   #       Thus, dev dependencies in gemspec must have
   #
-  #       required_ruby_version ">= 2.3.0" (or lower)
+  #       required_ruby_version ">= 2.4" (or lower)
   #
   #       Development dependencies that require strictly newer Ruby versions should be in a "gemfile",
   #       and preferably a modular one (see gemfiles/modular/*.gemfile).
-
-spec.add_development_dependency("kettle-drift")
 
   # Dev, Test, & Release Tasks
   spec.add_development_dependency("kettle-dev", "~> 2.0")                  # ruby >= 2.3.0
 
   # Security
   spec.add_development_dependency("bundler-audit", "~> 0.9.3")                      # ruby >= 2.0.0
-  #       visibility and discoverability on RubyGems.org.
-  #       This gem, and its gemspec runtime dependencies, will install on Ruby down to 2.4.x.
-  #       This gem, and its gemspec development dependencies, will install on Ruby down to 2.4.x.
-  #       required_ruby_version ">= 2.4" (or lower)
 
-  # Release Tasks
+  # Tasks
+  spec.add_development_dependency("rake", "~> 13.0")                                # ruby >= 2.2.0
+
+  # Debugging
+  spec.add_development_dependency("require_bench", "~> 1.0", ">= 1.0.4")            # ruby >= 2.2.0
+
+  # Testing
+  spec.add_development_dependency("appraisal2", "~> 3.0", ">= 3.0.6")               # ruby >= 1.8.7, for testing against multiple versions of dependencies
+  spec.add_development_dependency("kettle-test", "~> 2.0", ">= 2.0.0")              # ruby >= 2.3
+
+  # Releasing
+  spec.add_development_dependency("ruby-progressbar", "~> 1.13")                    # ruby >= 0
   spec.add_development_dependency("stone_checksums", "~> 1.0", ">= 1.0.3")          # ruby >= 2.2.0
 
   # Git integration (optional)
@@ -150,24 +164,12 @@ spec.add_development_dependency("kettle-drift")
   # See: https://github.com/vcr/vcr/issues/1057
   # spec.add_development_dependency("vcr", ">= 4")                        # 6.0 claims to support ruby >= 2.3, but fails on ruby 2.4
   # spec.add_development_dependency("webmock", ">= 3")                    # Last version to support ruby >= 2.3
-  # Testing
-  spec.add_development_dependency("appraisal2", "~> 3.0", ">= 3.0.6")               # ruby >= 1.8.7, for testing against multiple versions of dependencies
-  spec.add_development_dependency("kettle-test", "~> 2.0", ">= 2.0.0")              # ruby >= 2.3
-
-  # Releasing
-  spec.add_development_dependency("ruby-progressbar", "~> 1.13")                    # ruby >= 0
+spec.add_development_dependency("kettle-drift")
   spec.add_development_dependency("rspec-benchmark", "~> 0.6")
   spec.add_development_dependency("rspec-block_is_expected", "~> 1.0")        # ruby >= 1.8.7, for block_is_expected.to syntax
   spec.add_development_dependency("rspec_junit_formatter", "~> 0.6")          # ruby >= 2.3.0, for GitLab Test Result Parsing
   spec.add_development_dependency("rspec-stubbed_env", "~> 1.0")              # ruby >= 2.3.0, helper for stubbing ENV in specs
   spec.add_development_dependency("silent_stream", "~> 1.0", ">= 1.0.11")     # ruby >= 2.3.0, for output capture
-
   spec.add_development_dependency("http", ">= 4.4.1", "< 6")                  # ruby >= 2.3, v5 is ruby >= 2.6
   spec.add_development_dependency("json", ">= 2.7.6", "~> 2.7")               # ruby >= 2.3, not semver, later v2 minors drop Rubies
-
-  # Tasks
-  spec.add_development_dependency("rake", "~> 13.0")                                # ruby >= 2.2.0
-
-  # Debugging
-  spec.add_development_dependency("require_bench", "~> 1.0", ">= 1.0.4")            # ruby >= 2.2.0
 end

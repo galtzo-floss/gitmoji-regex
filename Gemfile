@@ -18,8 +18,8 @@ git_source(:gitlab) { |repo_name| "https://gitlab.com/#{repo_name}" }
 # Include dependencies from gitmoji-regex.gemspec
 gemspec
 
-# Templating (env-switched: KETTLE_RB_DEV=true for local paths)
-eval_gemfile "gemfiles/modular/templating.gemfile"
+# Templating (env-switched: SMORG_RB_DEV=/path/to/structuredmerge/ruby/gems for local paths)
+eval_gemfile "gemfiles/modular/templating.gemfile" if ENV.fetch("K_JEM_TEMPLATING", "false").casecmp("true").zero?
 
 # Debugging
 eval_gemfile "gemfiles/modular/debug.gemfile"

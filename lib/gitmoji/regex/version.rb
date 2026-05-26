@@ -8,3 +8,4 @@ module Gitmoji
     VERSION = Version::VERSION # Traditional Constant Location
   end
 end
+
