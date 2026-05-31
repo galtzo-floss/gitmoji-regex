@@ -233,9 +233,9 @@ NOTE: To build without signing the gem set `SKIP_GEM_SIGNING` to any value in th
 14. Run `bundle exec rake release` which will create a git tag for the version,
     push git commits and tags, and push the `.gem` file to the gem host configured in the gemspec.
 
-[📜src-gl]: https://gitlab.com/galtzo-floss/gitmoji-regex/-/tree/main/gems/gitmoji-regex
-[📜src-cb]: https://codeberg.org/galtzo-floss/gitmoji-regex/src/branch/main/gems/gitmoji-regex
-[📜src-gh]: https://github.com/galtzo-floss/gitmoji-regex/tree/main/gems/gitmoji-regex
+[📜src-gl]: https://gitlab.com/galtzo-floss/gitmoji-regex
+[📜src-cb]: https://codeberg.org/galtzo-floss/gitmoji-regex
+[📜src-gh]: https://github.com/galtzo-floss/gitmoji-regex
 [🧪build]: https://github.com/galtzo-floss/gitmoji-regex/actions
 [🤝conduct]: https://github.com/galtzo-floss/gitmoji-regex/blob/main/CODE_OF_CONDUCT.md
 [🖐contrib-rocks]: https://contrib.rocks

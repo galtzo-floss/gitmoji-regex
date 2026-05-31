@@ -193,7 +193,7 @@ the [MIT](MIT.md) [![License: MIT][📄license-img]][📄license-ref].
 [✉️ruby-friends-img]: https://img.shields.io/badge/daily.dev-%F0%9F%92%8E_Ruby_Friends-0A0A0A?style=for-the-badge&logo=dailydotdev&logoColor=white
 [✉️ruby-friends]: https://app.daily.dev/squads/rubyfriends
 [✇bundle-group-pattern]: https://gist.github.com/pboling/4564780
-[⛳️gem-namespace]: https://github.com/galtzo-floss/gitmoji-regex/tree/main/gems/gitmoji-regex
+[⛳️gem-namespace]: https://github.com/galtzo-floss/gitmoji-regex
 [⛳️namespace-img]: https://img.shields.io/badge/namespace-Gitmoji::Regex-3C2D2D.svg?style=square&logo=ruby&logoColor=white
 [⛳️gem-name]: https://bestgems.org/gems/gitmoji-regex
 [⛳️name-img]: https://img.shields.io/badge/name-gitmoji--regex-3C2D2D.svg?style=square&logo=rubygems&logoColor=red
@@ -233,11 +233,11 @@ the [MIT](MIT.md) [![License: MIT][📄license-img]][📄license-ref].
 [💁🏼‍♂️peterboling]: http://www.peterboling.com
 [🚂railsbling]: http://www.railsbling.com
 [📜src-gl-img]: https://img.shields.io/badge/GitLab-FBA326?style=for-the-badge&logo=Gitlab&logoColor=orange
-[📜src-gl]: https://gitlab.com/galtzo-floss/gitmoji-regex/-/tree/main/gems/gitmoji-regex
+[📜src-gl]: https://gitlab.com/galtzo-floss/gitmoji-regex
 [📜src-cb-img]: https://img.shields.io/badge/CodeBerg-4893CC?style=for-the-badge&logo=CodeBerg&logoColor=blue
-[📜src-cb]: https://codeberg.org/galtzo-floss/gitmoji-regex/src/branch/main/gems/gitmoji-regex
+[📜src-cb]: https://codeberg.org/galtzo-floss/gitmoji-regex
 [📜src-gh-img]: https://img.shields.io/badge/GitHub-238636?style=for-the-badge&logo=Github&logoColor=green
-[📜src-gh]: https://github.com/galtzo-floss/gitmoji-regex/tree/main/gems/gitmoji-regex
+[📜src-gh]: https://github.com/galtzo-floss/gitmoji-regex
 [📜docs-cr-rd-img]: https://img.shields.io/badge/RubyDoc-Current_Release-943CD2?style=for-the-badge&logo=readthedocs&logoColor=white
 [📜docs-head-rd-img]: https://img.shields.io/badge/YARD_on_Galtzo.com-HEAD-943CD2?style=for-the-badge&logo=readthedocs&logoColor=white
 [📜gl-wiki]: https://gitlab.com/galtzo-floss/gitmoji-regex/-/wikis/home
