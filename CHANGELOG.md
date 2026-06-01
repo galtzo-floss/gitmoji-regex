@@ -22,6 +22,10 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Changed
 
+- Refreshed kettle-jem-managed project files, including StructuredMerge git
+  driver configuration, local development dependency wiring, and README/Rakefile
+  template updates.
+
 ### Deprecated
 
 ### Removed

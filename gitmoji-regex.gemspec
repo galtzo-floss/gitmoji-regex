@@ -29,8 +29,8 @@ Gem::Specification.new do |spec|
   spec.authors = ["Peter H. Boling", "Aboling0"]
   spec.email = ["floss@galtzo.com"]
 
-  spec.summary = "🍲 A regular expression for Gitmoji symbols"
-  spec.description = "🍲 A regular expression matching Gitmoji (a subset of Unicode Emoji) symbolsFund overlooked open source projects - bottom of stack, dev/test dependencies: floss-funding.dev"
+  spec.summary = "🏁 A regular expression for Gitmoji symbols"
+  spec.description = "🏁 A regular expression matching Gitmoji (a subset of Unicode Emoji) symbolsFund overlooked open source projects - bottom of stack, dev/test dependencies: floss-funding.dev"
   spec.homepage = "https://github.com/galtzo-floss/gitmoji-regex"
   spec.licenses = ["MIT"]
   spec.required_ruby_version = ">= 2.4"
@@ -128,7 +128,7 @@ Gem::Specification.new do |spec|
   #       and preferably a modular one (see gemfiles/modular/*.gemfile).
 
   # Dev, Test, & Release Tasks
-  spec.add_development_dependency("kettle-dev", "~> 2.0")                  # ruby >= 2.3.0
+  spec.add_development_dependency("kettle-dev", "~> 2.0", ">= 2.0.6")      # ruby >= 2.4
 
   # Security
   spec.add_development_dependency("bundler-audit", "~> 0.9.3")                      # ruby >= 2.0.0
@@ -141,7 +141,7 @@ Gem::Specification.new do |spec|
 
   # Testing
   spec.add_development_dependency("appraisal2", "~> 3.0", ">= 3.0.6")               # ruby >= 1.8.7, for testing against multiple versions of dependencies
-  spec.add_development_dependency("kettle-test", "~> 2.0", ">= 2.0.0")              # ruby >= 2.3
+  spec.add_development_dependency("kettle-test", "~> 2.0", ">= 2.0.1")             # ruby >= 2.4
 
   # Releasing
   spec.add_development_dependency("ruby-progressbar", "~> 1.13")                    # ruby >= 0

@@ -32,9 +32,23 @@ rescue LoadError => error
   raise error unless error.message.include?("kettle")
 end
 
+# External RSpec & related config
+require "kettle/test/rspec"
+
 # This gem
 require "gitmoji/regex"
 
+RSpec.configure do |config|
+  # Enable flags like --only-failures and --next-failure
+  config.example_status_persistence_file_path = ".rspec_status"
+
+  # Disable RSpec exposing methods globally on `Module` and `main`
+  config.disable_monkey_patching!
+
+  config.expect_with :rspec do |c|
+    c.syntax = :expect
+  end
+end
 # Not required by default, as it is not part of the gem's API, primarily for specs and maintainers
 require "gitmoji/regex/reference"
 

@@ -84,7 +84,7 @@
 # Set this to a single emoji that represents your gem. Examples: 🪙 🔑 🛠️ 🔮
 # This key is REQUIRED. kettle-jem will abort if it is absent.
 # ENV override: KJ_PROJECT_EMOJI
-project_emoji: 🍲
+project_emoji: 🏁
 
 # Engines this project supports.
 # List the Ruby engines that your gem targets. kettle-jem uses this to decide
@@ -198,14 +198,18 @@ workflows:
 
 # README top logos.
 # Comma-separated list of optional logo entries for the generated README header.
-# Supported values: related-org, ruby, org, project
-# Default (when key is absent): related-org,ruby,org,project
+# top_logos render above the title; h2_synopsis_logos render inline with the Synopsis H2.
+# Supported values: related-org, ruby, org, project, optionally followed by |width.
+# Examples: org|12%, ruby|96px
+# Default widths: top 1 logo => 14%, top 2 logos => 12%, Synopsis 1 logo => 10%, Synopsis 2 logos => 8%.
+# Default (when keys are absent): top_logos: org,project; h2_synopsis_logos: related-org,ruby
 # Legacy top_logo_mode values map as:
 #   org => related-org,ruby,org
 #   project => related-org,ruby,project
 #   org_and_project => related-org,ruby,org,project
 readme:
-  top_logos: related-org,ruby,org
+  top_logos: org
+  h2_synopsis_logos: related-org,ruby
   # Optional package-family README block.
   # Supported values: structuredmerge
   # Leave unset for standalone kettle-rb gems and most projects.
@@ -362,7 +366,31 @@ templates:
   #   monorepo-root   - repository-root support template
   #
   # ENV override: KETTLE_JEM_TEMPLATE_PROFILE
-  profile: "monorepo-subgem"
+  profile: monorepo-subgem-package
+  entries:
+    - README.md
+    - source: gem.gemspec
+      target: gitmoji-regex.gemspec
+    - LICENSE.md
+    - MIT.md
+    - AGPL-3.0-only.md
+    - PolyForm-Noncommercial-1.0.0.md
+    - PolyForm-Small-Business-1.0.0.md
+    - Big-Time-Public-License.md
+    - certs/pboling.pem
+    - tmp/.gitignore
+    - source: lib/gem/version.rb
+      target: lib/gitmoji/regex/version.rb
+    - source: sig/gem/version.rbs
+      target: sig/gitmoji/regex/version.rbs
+# StructuredMerge Git diff driver setup.
+# Default: semantic-diff installs local .gitattributes entries for semantic
+# structured diffs. Use builtin-diff to retain Git's built-in language drivers,
+# global to register driver commands in user config, include-file to write
+# .git/smorg/config, check to verify setup, undo to remove managed entries, or
+# none to opt out.
+# ENV override: KETTLE_JEM_GIT_DRIVERS
+git_drivers: semantic-diff
 
 # Optional kettle-jem plugins.
 # Each entry is a gem name. During bootstrap, kettle-jem ensures each plugin is
@@ -452,6 +480,8 @@ files:
   AGENTS.md:
     strategy: accept_template
   Appraisal.root.gemfile:
+    strategy: accept_template
+  Rakefile:
     strategy: accept_template
   .github:
     copilot_instructions.md:
