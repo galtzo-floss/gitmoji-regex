@@ -92,7 +92,7 @@ RSpec.describe Gitmoji::Regex::Reference do
   end
 
   it "Cached reference has no missing gitmoji" do
-    expect(instance.to_a - known).to eq([])
+    expect(instance.to_a - known).to be_empty
   end
 
   describe "#compare_src" do
@@ -139,7 +139,7 @@ RSpec.describe Gitmoji::Regex::Reference do
     it "detects change" do
       allow(File).to receive(:read).with(described_class::GITMOJI_PATH).and_return({"gitmojis" => [{"emoji" => "a"}]}.to_json)
       allow(HTTP).to receive(:get).with(described_class::GITMOJI_REFERENCE).and_return(
-        instance_double(HTTP::Response, body: {"gitmojis" => [{"emoji" => "b"}]}.to_json),
+        instance_double(HTTP::Response, body: {"gitmojis" => [{"emoji" => "b"}]}.to_json)
       )
       expect(instance.compare_json).to be(false)
     end

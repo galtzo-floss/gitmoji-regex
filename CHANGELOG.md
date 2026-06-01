@@ -22,20 +22,31 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Changed
 
-- Refreshed kettle-jem-managed project files, including StructuredMerge git
-  driver configuration, local development dependency wiring, and README/Rakefile
-  template updates.
-
 ### Deprecated
 
 ### Removed
 
 ### Fixed
 
+### Security
+
+## [2.0.1] - 2026-05-31
+
+- TAG: [v2.0.1][2.0.1t]
+- COVERAGE: 100.00% -- 58/58 lines in 3 files
+- BRANCH COVERAGE: 100.00% -- 4/4 branches in 3 files
+- 90.00% documented
+
+### Changed
+
+- Refreshed kettle-jem-managed project files, including StructuredMerge git
+  driver configuration, local development dependency wiring, and README/Rakefile
+  template updates.
+
+### Fixed
+
 - Fixed generated documentation URLs that incorrectly pointed at a monorepo
   `gems/gitmoji-regex` path.
-
-### Security
 
 ## [2.0.0] - 2026-05-26
 
@@ -146,7 +157,9 @@ Please file a bug if you notice a violation of semantic versioning.
 
 - Initial release
 
-[Unreleased]: https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.0...HEAD
+[Unreleased]: https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.1...HEAD
+[2.0.1]: https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.0...v2.0.1
+[2.0.1t]: https://github.com/galtzo-floss/gitmoji-regex/releases/tag/v2.0.1
 [2.0.0]: https://github.com/galtzo-floss/gitmoji-regex/compare/v1.0.3...v2.0.0
 [2.0.0t]: https://github.com/galtzo-floss/gitmoji-regex/releases/tag/v2.0.0
 [1.0.4]: https://github.com/galtzo-floss/gitmoji-regex/compare/v1.0.3...v1.0.4
