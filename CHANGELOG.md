@@ -22,6 +22,9 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Changed
 
+- Refreshed kettle-jem-managed project files, raising the `kettle-dev`
+  development dependency floor to 2.2.9.
+
 ### Deprecated
 
 ### Removed
