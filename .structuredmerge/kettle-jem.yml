@@ -366,23 +366,7 @@ templates:
   #   monorepo-root   - repository-root support template
   #
   # ENV override: KETTLE_JEM_TEMPLATE_PROFILE
-  profile: monorepo-subgem-package
-  entries:
-    - README.md
-    - source: gem.gemspec
-      target: gitmoji-regex.gemspec
-    - LICENSE.md
-    - MIT.md
-    - AGPL-3.0-only.md
-    - PolyForm-Noncommercial-1.0.0.md
-    - PolyForm-Small-Business-1.0.0.md
-    - Big-Time-Public-License.md
-    - certs/pboling.pem
-    - tmp/.gitignore
-    - source: lib/gem/version.rb
-      target: lib/gitmoji/regex/version.rb
-    - source: sig/gem/version.rbs
-      target: sig/gitmoji/regex/version.rbs
+  profile: full
 # StructuredMerge Git diff driver setup.
 # Default: semantic-diff installs local .gitattributes entries for semantic
 # structured diffs. Use builtin-diff to retain Git's built-in language drivers,

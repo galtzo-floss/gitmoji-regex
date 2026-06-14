@@ -22,6 +22,9 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Changed
 
+- Corrected the kettle-jem template profile from package-only to full
+  standalone templating so generated workflows are refreshed by retemplating.
+
 ### Deprecated
 
 ### Removed
