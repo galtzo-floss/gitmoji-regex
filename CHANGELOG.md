@@ -22,9 +22,6 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Changed
 
-- Refreshed kettle-jem-managed project files, raising the `kettle-dev`
-  development dependency floor to 2.2.9.
-
 ### Deprecated
 
 ### Removed
@@ -43,6 +40,11 @@ Please file a bug if you notice a violation of semantic versioning.
 ### Fixed
 
 - Restored `docs/CNAME` so the generated documentation site keeps its custom domain.
+
+### Changed
+
+- Refreshed kettle-jem-managed project files, raising the `kettle-dev`
+  development dependency floor to 2.2.9.
 
 ## [2.0.1] - 2026-05-31
 
