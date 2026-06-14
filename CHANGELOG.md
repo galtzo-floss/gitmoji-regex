@@ -28,8 +28,18 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Fixed
 
-- Restored `docs/CNAME` so the generated documentation site keeps its custom domain.
 ### Security
+
+## [2.0.2] - 2026-06-14
+
+- TAG: [v2.0.2][2.0.2t]
+- COVERAGE: 100.00% -- 58/58 lines in 3 files
+- BRANCH COVERAGE: 100.00% -- 4/4 branches in 3 files
+- 90.00% documented
+
+### Fixed
+
+- Restored `docs/CNAME` so the generated documentation site keeps its custom domain.
 
 ## [2.0.1] - 2026-05-31
 
@@ -158,7 +168,9 @@ Please file a bug if you notice a violation of semantic versioning.
 
 - Initial release
 
-[Unreleased]: https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.1...HEAD
+[Unreleased]: https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.2...HEAD
+[2.0.2]: https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.1...v2.0.2
+[2.0.2t]: https://github.com/galtzo-floss/gitmoji-regex/releases/tag/v2.0.2
 [2.0.1]: https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.0...v2.0.1
 [2.0.1t]: https://github.com/galtzo-floss/gitmoji-regex/releases/tag/v2.0.1
 [2.0.0]: https://github.com/galtzo-floss/gitmoji-regex/compare/v1.0.3...v2.0.0
