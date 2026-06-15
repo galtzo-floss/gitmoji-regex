@@ -22,9 +22,6 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Changed
 
-- Corrected the kettle-jem template profile from package-only to full
-  standalone templating so generated workflows are refreshed by retemplating.
-
 ### Deprecated
 
 ### Removed
@@ -48,6 +45,8 @@ Please file a bug if you notice a violation of semantic versioning.
 
 - Refreshed kettle-jem-managed project files, raising the `kettle-dev`
   development dependency floor to 2.2.9.
+- Corrected the kettle-jem template profile from package-only to full
+  standalone templating so generated workflows are refreshed by retemplating.
 
 ## [2.0.1] - 2026-05-31
 
