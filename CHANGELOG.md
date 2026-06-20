@@ -30,6 +30,8 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Fixed
 
+- Corrected RubyGems homepage metadata to point at the gem documentation site.
+
 ### Security
 
 ## [2.0.2] - 2026-06-14

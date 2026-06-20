@@ -351,7 +351,7 @@ yard_host: "gitmoji-regex.galtzo.com"
 # Full URL used for gemspec metadata["homepage_uri"].
 # Defaults to https://gitmoji-regex.galtzo.com.
 # ENV override: KJ_HOMEPAGE_URI
-homepage_uri: "https://structuredmerge.org"
+homepage_uri: "https://gitmoji-regex.galtzo.com"
 # Template source inventory.
 # The packaged inventory is the canonical kettle-jem project template. It
 # includes the detailed GitHub Actions workflow set, modular gemfiles,
