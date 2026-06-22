@@ -8,7 +8,7 @@ GIT
 PATH
   remote: .
   specs:
-    gitmoji-regex (2.0.2)
+    gitmoji-regex (2.0.3)
       version_gem (~> 1.1, >= 1.1.13)
 
 GEM

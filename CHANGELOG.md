@@ -20,11 +20,7 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Added
 
-- Added support for JRuby 10.1 and TruffleRuby 34.0.
-
 ### Changed
-
-- Retemplated project metadata and CI/development automation with `kettle-jem` v7.0.0.
 
 ### Deprecated
 
@@ -32,9 +28,26 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Fixed
 
-- Corrected RubyGems homepage metadata to point at the gem documentation site.
-
 ### Security
+
+## [2.0.3] - 2026-06-22
+
+- TAG: [v2.0.3][2.0.3t]
+- COVERAGE: 100.00% -- 58/58 lines in 3 files
+- BRANCH COVERAGE: 100.00% -- 4/4 branches in 3 files
+- 90.00% documented
+
+### Added
+
+- Added support for JRuby 10.1 and TruffleRuby 34.0.
+
+### Changed
+
+- Retemplated project metadata and CI/development automation with `kettle-jem` v7.0.0.
+
+### Fixed
+
+- Corrected RubyGems homepage metadata to point at the gem documentation site.
 
 ## [2.0.2] - 2026-06-14
 
@@ -181,7 +194,9 @@ Please file a bug if you notice a violation of semantic versioning.
 
 - Initial release
 
-[Unreleased]: https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.2...HEAD
+[Unreleased]: https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.3...HEAD
+[2.0.3]: https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.2...v2.0.3
+[2.0.3t]: https://github.com/galtzo-floss/gitmoji-regex/releases/tag/v2.0.3
 [2.0.2]: https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.1...v2.0.2
 [2.0.2t]: https://github.com/galtzo-floss/gitmoji-regex/releases/tag/v2.0.2
 [2.0.1]: https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.0...v2.0.1
