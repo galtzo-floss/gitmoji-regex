@@ -532,3 +532,14 @@ Thanks for RTFM. ☺️
 [💎appraisal2]: https://github.com/appraisal-rb/appraisal2
 [💎appraisal2-img]: https://img.shields.io/badge/appraised_by-appraisal2-34495e.svg?plastic&logo=ruby&logoColor=white
 [💎d-in-dvcs]: https://railsbling.com/posts/dvcs/put_the_d_in_dvcs/
+
+<!-- kettle-jem:metadata:start -->
+| Field | Value |
+|---|---|
+| Package | gitmoji-regex |
+| Description | 🏁 A regular expression matching Gitmoji (a subset of Unicode Emoji) symbolsFund overlooked open source projects - bottom of stack, dev/test dependencies: floss-funding.dev |
+| Homepage | https://github.com/galtzo-floss/gitmoji-regex |
+| Source | https://github.com/galtzo-floss/gitmoji-regex |
+| License | `MIT` |
+| Funding | https://github.com/sponsors/pboling, https://ko-fi.com/pboling, https://liberapay.com/pboling/donate, https://opencollective.com/galtzo-floss, https://thanks.dev/u/gh/pboling, https://tidelift.com/funding/github/rubygems/gitmoji-regex, https://www.buymeacoffee.com/pboling |
+<!-- kettle-jem:metadata:end -->
