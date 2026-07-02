@@ -28,9 +28,18 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Fixed
 
-- Package configured license files in gem release file lists.
-
 ### Security
+
+## [2.0.4] - 2026-07-02
+
+- TAG: [v2.0.4][2.0.4t]
+- COVERAGE: 100.00% -- 58/58 lines in 3 files
+- BRANCH COVERAGE: 100.00% -- 4/4 branches in 3 files
+- 90.00% documented
+
+### Fixed
+
+- Package configured license files in gem release file lists.
 
 ## [2.0.3] - 2026-06-22
 
@@ -196,7 +205,9 @@ Please file a bug if you notice a violation of semantic versioning.
 
 - Initial release
 
-[Unreleased]: https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.3...HEAD
+[Unreleased]: https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.4...HEAD
+[2.0.4]: https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.3...v2.0.4
+[2.0.4t]: https://github.com/galtzo-floss/gitmoji-regex/releases/tag/v2.0.4
 [2.0.3]: https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.2...v2.0.3
 [2.0.3t]: https://github.com/galtzo-floss/gitmoji-regex/releases/tag/v2.0.3
 [2.0.2]: https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.1...v2.0.2
