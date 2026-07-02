@@ -28,20 +28,6 @@ eval_gemfile "gemfiles/modular/templating.gemfile" if ENV.fetch("K_JEM_TEMPLATIN
 # Debugging
 eval_gemfile "gemfiles/modular/debug.gemfile"
 
-platform :mri do
-  # Debugging - Ensure ENV["DEBUG"] == "true" to use debuggers within spec suite
-  # Use binding.break, binding.b, or debugger in code
-
-  # Dev Console - Binding.pry - Irb replacement
-  gem "pry", "~> 0.14"                     # ruby >= 2.0
-end
-
-# optional dependency for debug logging
-gem "logger"
-
-# Security Audit
-eval_gemfile "gemfiles/modular/audit.gemfile"
-
 # Code Coverage (env-switched: KETTLE_RB_DEV=true for local paths)
 eval_gemfile "gemfiles/modular/coverage.gemfile"
 
@@ -59,7 +45,3 @@ eval_gemfile "gemfiles/modular/x_std_libs.gemfile"
 
 # See unlocked_deps appraisal for more details on irb inclusion
 gem "irb", "~> 1.17" # ruby >= 2.7
-
-if ENV.fetch("FLOSS_FUNDING_LOCAL_DEV", "false").casecmp?("true")
-  gem "floss_funding", path: "/home/pboling/src/galtzo-floss/floss_funding"
-end
