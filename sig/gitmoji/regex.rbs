@@ -1,8 +1,8 @@
 module Gitmoji
   module Regex
     REGEX: Regexp
-
     module Version
+      VERSION: String
     end
 
     class Reference
@@ -27,5 +27,6 @@ module Gitmoji
       def fetch: () -> String
       def cached: () -> String
     end
+    VERSION: String
   end
 end

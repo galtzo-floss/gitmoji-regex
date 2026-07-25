@@ -1,8 +1,0 @@
-module Gitmoji
-  module Regex
-    module Version
-      VERSION: String
-    end
-    VERSION: String
-  end
-end
