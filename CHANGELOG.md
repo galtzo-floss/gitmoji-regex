@@ -22,6 +22,23 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Changed
 
+### Deprecated
+
+### Removed
+
+### Fixed
+
+### Security
+
+## [2.0.5] - 2026-07-25
+
+- TAG: [v2.0.5][2.0.5t]
+- COVERAGE: 100.00% -- 58/58 lines in 3 files
+- BRANCH COVERAGE: 100.00% -- 4/4 branches in 3 files
+- 90.00% documented
+
+### Changed
+
 - kettle-jem-template-20260716-001 - Shim gemspec manifests now include
   `LICENSE.md` instead of nonexistent `LICENSE.txt`.
 - kettle-jem-template-20260716-002 - Generated gemspec manifests now ship fewer
@@ -40,14 +57,6 @@ Please file a bug if you notice a violation of semantic versioning.
   files now run when pull request head branches start with `feature/release`,
   so release CI monitoring does not report intentionally skipped engine
   workflows as failures.
-
-### Deprecated
-
-### Removed
-
-### Fixed
-
-### Security
 
 ## [2.0.4] - 2026-07-02
 
@@ -224,7 +233,9 @@ Please file a bug if you notice a violation of semantic versioning.
 
 - Initial release
 
-[Unreleased]: https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.4...HEAD
+[Unreleased]: https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.5...HEAD
+[2.0.5]: https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.4...v2.0.5
+[2.0.5t]: https://github.com/galtzo-floss/gitmoji-regex/releases/tag/v2.0.5
 [2.0.4]: https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.3...v2.0.4
 [2.0.4t]: https://github.com/galtzo-floss/gitmoji-regex/releases/tag/v2.0.4
 [2.0.3]: https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.2...v2.0.3

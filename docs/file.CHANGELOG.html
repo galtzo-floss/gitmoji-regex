@@ -70,7 +70,7 @@ and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semant
 and <a href="https://tom.preston-werner.com/2022/05/23/major-version-numbers-are-not-sacred.html">yes</a>, platform and engine support are part of the <a href="https://github.com/semver/semver/issues/716#issuecomment-869336139">public API</a>.<br>
 Please file a bug if you notice a violation of semantic versioning.</p>
 
-<h2 id="unreleased"><a href="https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.4...HEAD">Unreleased</a></h2>
+<h2 id="unreleased"><a href="https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.5...HEAD">Unreleased</a></h2>
 
 <h3 id="added">Added</h3>
 
@@ -83,6 +83,40 @@ Please file a bug if you notice a violation of semantic versioning.</p>
 <h3 id="fixed">Fixed</h3>
 
 <h3 id="security">Security</h3>
+
+<h2 id="205---2026-07-25">
+<a href="https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.4...v2.0.5">2.0.5</a> - 2026-07-25</h2>
+
+<ul>
+  <li>TAG: <a href="https://github.com/galtzo-floss/gitmoji-regex/releases/tag/v2.0.5">v2.0.5</a>
+</li>
+  <li>COVERAGE: 100.00% – 58/58 lines in 3 files</li>
+  <li>BRANCH COVERAGE: 100.00% – 4/4 branches in 3 files</li>
+  <li>90.00% documented</li>
+</ul>
+
+<h3 id="changed-1">Changed</h3>
+
+<ul>
+  <li>kettle-jem-template-20260716-001 - Shim gemspec manifests now include<br>
+<code>LICENSE.md</code> instead of nonexistent <code>LICENSE.txt</code>.</li>
+  <li>kettle-jem-template-20260716-002 - Generated gemspec manifests now ship fewer<br>
+repository-only files by default to reduce downstream distro packaging churn.</li>
+  <li>kettle-jem-template-20260720-001 - Generated READMEs can now render<br>
+template-managed corporate sponsor logos from project or family config.</li>
+  <li>kettle-jem-template-20260720-002 - Generated development Gemfiles now use the<br>
+released <code>tree_sitter_language_pack</code> gem 1.13.3 or newer by default.</li>
+  <li>kettle-jem-template-20260720-003 - Generated StructuredMerge Git diff driver<br>
+config now uses the installed <code>smorg-rb</code> Ruby driver name.</li>
+  <li>kettle-jem-template-20260720-004 - Generated multi-engine workflow files now<br>
+omit JRuby and TruffleRuby jobs when project config declares MRI-only engines.</li>
+  <li>kettle-jem-template-20260720-005 - Generated README Support &amp; Community rows<br>
+now include a RubyForum help badge.</li>
+  <li>kettle-jem-template-20260725-001 - Generated JRuby and TruffleRuby workflow<br>
+files now run when pull request head branches start with <code>feature/release</code>,<br>
+so release CI monitoring does not report intentionally skipped engine<br>
+workflows as failures.</li>
+</ul>
 
 <h2 id="204---2026-07-02">
 <a href="https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.3...v2.0.4">2.0.4</a> - 2026-07-02</h2>
@@ -118,7 +152,7 @@ Please file a bug if you notice a violation of semantic versioning.</p>
   <li>Added support for JRuby 10.1 and TruffleRuby 34.0.</li>
 </ul>
 
-<h3 id="changed-1">Changed</h3>
+<h3 id="changed-2">Changed</h3>
 
 <ul>
   <li>Retemplated project metadata and CI/development automation with <code>kettle-jem</code> v7.0.0.</li>
@@ -147,7 +181,7 @@ Please file a bug if you notice a violation of semantic versioning.</p>
   <li>Restored <code>docs/CNAME</code> so the generated documentation site keeps its custom domain.</li>
 </ul>
 
-<h3 id="changed-2">Changed</h3>
+<h3 id="changed-3">Changed</h3>
 
 <ul>
   <li>Refreshed kettle-jem-managed project files, raising the <code>kettle-dev</code><br>
@@ -167,7 +201,7 @@ standalone templating so generated workflows are refreshed by retemplating.</li>
   <li>90.00% documented</li>
 </ul>
 
-<h3 id="changed-3">Changed</h3>
+<h3 id="changed-4">Changed</h3>
 
 <ul>
   <li>Refreshed kettle-jem-managed project files, including StructuredMerge git<br>
@@ -199,7 +233,7 @@ template updates.</li>
   <li>New gitmoji “🦖” (<code>:t-rex:</code>) for code that adds backwards compatibility</li>
 </ul>
 
-<h3 id="changed-4">Changed</h3>
+<h3 id="changed-5">Changed</h3>
 
 <ul>
   <li>Documented the <code>bin/refresh</code> maintainer workflow for syncing the upstream gitmoji reference</li>
@@ -229,7 +263,7 @@ template updates.</li>
   <li>appraisal2 for improved testing platform coverage in CI</li>
 </ul>
 
-<h3 id="changed-5">Changed</h3>
+<h3 id="changed-6">Changed</h3>
 
 <ul>
   <li>gem dependencies for local development</li>
@@ -260,7 +294,7 @@ template updates.</li>
   <li>100% branch &amp; line test coverage</li>
 </ul>
 
-<h3 id="changed-6">Changed</h3>
+<h3 id="changed-7">Changed</h3>
 
 <ul>
   <li>Primary source forge moved from GitHub to <a href="https://git.sr.ht/~galtzo/gitmoji-regex">Source Hut</a>
@@ -295,7 +329,7 @@ template updates.</li>
   <li>Gitmoji::Regex::Version is introspectable</li>
 </ul>
 
-<h3 id="changed-7">Changed</h3>
+<h3 id="changed-8">Changed</h3>
 
 <ul>
   <li>Gitmoji::Regex::VERSION is now Gitmoji::Regex::Version::VERSION</li>
