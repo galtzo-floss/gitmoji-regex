@@ -22,12 +22,6 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Changed
 
-- kettle-jem-template-20260725-002 - Generated gemspec templates now include
-  `anonymous_loader` as a development dependency, and version specs use it to
-  execute generated `version.rb` files for coverage without redefining package
-  constants. Managed version specs are removed when `version_gem` is disabled
-  or incompatible with the project's runtime Ruby floor.
-
 ### Deprecated
 
 ### Removed
@@ -35,6 +29,21 @@ Please file a bug if you notice a violation of semantic versioning.
 ### Fixed
 
 ### Security
+
+## [2.0.6] - 2026-07-25
+
+- TAG: [v2.0.6][2.0.6t]
+- COVERAGE: 100.00% -- 58/58 lines in 3 files
+- BRANCH COVERAGE: 100.00% -- 4/4 branches in 3 files
+- 90.00% documented
+
+### Changed
+
+- kettle-jem-template-20260725-002 - Generated gemspec templates now include
+  `anonymous_loader` as a development dependency, and version specs use it to
+  execute generated `version.rb` files for coverage without redefining package
+  constants. Managed version specs are removed when `version_gem` is disabled
+  or incompatible with the project's runtime Ruby floor.
 
 ## [2.0.5] - 2026-07-25
 
@@ -239,7 +248,9 @@ Please file a bug if you notice a violation of semantic versioning.
 
 - Initial release
 
-[Unreleased]: https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.5...HEAD
+[Unreleased]: https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.6...HEAD
+[2.0.6]: https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.5...v2.0.6
+[2.0.6t]: https://github.com/galtzo-floss/gitmoji-regex/releases/tag/v2.0.6
 [2.0.5]: https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.4...v2.0.5
 [2.0.5t]: https://github.com/galtzo-floss/gitmoji-regex/releases/tag/v2.0.5
 [2.0.4]: https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.3...v2.0.4
