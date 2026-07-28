@@ -82,7 +82,11 @@ GEM
       zeitwerk (~> 2.6)
     emoji_regex (15.0.0)
     erb (6.0.6)
+    ffi (1.17.4-aarch64-linux-gnu)
+    ffi (1.17.4-aarch64-linux-musl)
+    ffi (1.17.4-arm64-darwin)
     ffi (1.17.4-x86_64-linux-gnu)
+    ffi (1.17.4-x86_64-linux-musl)
     ffi-compiler (1.4.2)
       ffi (>= 1.15.5)
       rake
@@ -110,7 +114,7 @@ GEM
       rdoc (>= 4.0.0)
       reline (>= 0.4.2)
     json (2.7.6)
-    kettle-dev (2.5.4)
+    kettle-dev (2.5.5)
       emoji_regex (>= 15.0)
       kettle-gha-pins (~> 0.3, >= 0.3.3)
       kettle-ndjson (~> 0.1, >= 0.1.1)
@@ -167,7 +171,15 @@ GEM
       docopt_ng (~> 0.7.1)
       reline (~> 0.6)
     mutex_m (0.3.0)
+    nokogiri (1.19.4-aarch64-linux-gnu)
+      racc (~> 1.4)
+    nokogiri (1.19.4-aarch64-linux-musl)
+      racc (~> 1.4)
+    nokogiri (1.19.4-arm64-darwin)
+      racc (~> 1.4)
     nokogiri (1.19.4-x86_64-linux-gnu)
+      racc (~> 1.4)
+    nokogiri (1.19.4-x86_64-linux-musl)
       racc (~> 1.4)
     nomono (1.1.1)
     openssl (4.0.2)
@@ -418,7 +430,12 @@ GEM
     zlib (3.2.3)
 
 PLATFORMS
+  aarch64-linux-gnu
+  aarch64-linux-musl
+  arm64-darwin
+  x86_64-linux
   x86_64-linux-gnu
+  x86_64-linux-musl
 
 DEPENDENCIES
   addressable (>= 2.8, < 3)
@@ -436,13 +453,13 @@ DEPENDENCIES
   irb (~> 1.17)
   json (~> 2.7.6)
   kettle-dev (~> 2.3, >= 2.3.7)
-  kettle-family (~> 1.2, >= 1.2.0)
+  kettle-family (~> 1.2, >= 1.2.1)
   kettle-soup-cover (~> 3.0, >= 3.0.6)
   kettle-test (~> 2.0, >= 2.0.16)
   kramdown (~> 2.5, >= 2.5.2)
   kramdown-parser-gfm (~> 1.1)
   mutex_m (~> 0.2)
-  nomono (~> 1.1, >= 1.1.0)
+  nomono (~> 1.1, >= 1.1.1)
   rake (~> 13.0)
   rbs (>= 3.0)
   rdoc (~> 6.11)
@@ -513,7 +530,11 @@ CHECKSUMS
   dry-types (1.9.1) sha256=baebeecdb9f8395d6c9d227b62011279440943e3ef2468fe8ccc1ba11467f178
   emoji_regex (15.0.0) sha256=a508b2c0bee561169564e0aec96085020c900520d335e5533fd8e78e59493829
   erb (6.0.6) sha256=a9b24986700f5bf127c4f297c5403c3ca41b83b0a316c0cd09a096b56e644ae5
+  ffi (1.17.4-aarch64-linux-gnu) sha256=b208f06f91ffd8f5e1193da3cae3d2ccfc27fc36fba577baf698d26d91c080df
+  ffi (1.17.4-aarch64-linux-musl) sha256=9286b7a615f2676245283aef0a0a3b475ae3aae2bb5448baace630bb77b91f39
+  ffi (1.17.4-arm64-darwin) sha256=19071aaf1419251b0a46852abf960e77330a3b334d13a4ab51d58b31a937001b
   ffi (1.17.4-x86_64-linux-gnu) sha256=9d3db14c2eae074b382fa9c083fe95aec6e0a1451da249eab096c34002bc752d
+  ffi (1.17.4-x86_64-linux-musl) sha256=3fdf9888483de005f8ef8d1cf2d3b20d86626af206cbf780f6a6a12439a9c49e
   ffi-compiler (1.4.2) sha256=a9d69d5d9ced6f64776ddafa535867ad90e5740ad37bed7afb4de6e450da126e
   gem_bench (2.0.5) sha256=0dc0fb44a5a5eb7b2f5c1c68a5b0164d72007132822c012bac3abe976b199ead
   geom2d (0.4.1) sha256=ea0998ea90c4f2752e24fe13d85a4f89bee689d151316140ebcc6369bf634ed9
@@ -525,7 +546,7 @@ CHECKSUMS
   io-console (0.8.2) sha256=d6e3ae7a7cc7574f4b8893b4fca2162e57a825b223a177b7afa236c5ef9814cc
   irb (1.18.0) sha256=de9454a0703a54704b9811a5ef31a60c86949fbf4013fcf244fabc7c775248e3
   json (2.7.6) sha256=2d9aba03af3167401e8cf8de50daed5b5aec5b5a622f15c4b7ce2fd8d49a070f
-  kettle-dev (2.5.4) sha256=7196552abb27cb4fd327fe11d3e0519a1f3d3f737eaa34882ce606f577e9d580
+  kettle-dev (2.5.5) sha256=3f97d92bb1b485ea931b1372d0cda8d8f4cd9e39ff9bcd90f1723eecb67e3c1a
   kettle-family (1.2.1) sha256=bbee04639694b6eaf7f8141f9edcb529b3c7bfc565dc3672b4593eda2612747f
   kettle-gha-pins (0.3.3) sha256=da9337376dd957dca65164f669045a71252f0b5c0234aaa1cde384c5f5c8ad87
   kettle-ndjson (0.1.2) sha256=1c2c4e8246a718f4f78b2f4141184acf5c239087319e5abc8d6d289635587650
@@ -541,7 +562,11 @@ CHECKSUMS
   logger (1.7.0) sha256=196edec7cc44b66cfb40f9755ce11b392f21f7967696af15d274dde7edff0203
   mister_bin (0.9.0) sha256=624fe401db4faf1978e84c17e0b320827697a13a6cba4fe656001269079be7d3
   mutex_m (0.3.0) sha256=cfcb04ac16b69c4813777022fdceda24e9f798e48092a2b817eb4c0a782b0751
+  nokogiri (1.19.4-aarch64-linux-gnu) sha256=1269fb644a6de405057a53dd5c762b1209b43ca7424f839454d3dbc677c31a8f
+  nokogiri (1.19.4-aarch64-linux-musl) sha256=35c65b9ce72b3bb03207bdbe7067915019dc18c1b9b59139684bd6690fdd01af
+  nokogiri (1.19.4-arm64-darwin) sha256=a46db9853286e6597b36ebc6953817d15acf3a299583eb3f89fdc6f91dd63527
   nokogiri (1.19.4-x86_64-linux-gnu) sha256=379fae440b28915e3f19d752ce2dcf8465ed2b2fbefd2a7ca0dd497bc981a06a
+  nokogiri (1.19.4-x86_64-linux-musl) sha256=17dfb7c1fa194ae02fbf7c51a7afc8d278045ab3fdacfd86f91d02d7b274470b
   nomono (1.1.1) sha256=7d1332b7d737f23cb37bb802aa2ae5b8e70e191cc9de480c7c7d8296057d06c2
   openssl (4.0.2) sha256=1037ad2868ae58df9ad917891c0c0f9815a1172f6846d4bcdd508e4c2ee747c2
   ostruct (0.6.3) sha256=95a2ed4a4bd1d190784e666b47b2d3f078e4a9efda2fccf18f84ddc6538ed912
