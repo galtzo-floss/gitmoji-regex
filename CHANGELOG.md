@@ -20,6 +20,25 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Added
 
+### Changed
+
+### Deprecated
+
+### Removed
+
+### Fixed
+
+### Security
+
+## [2.0.7] - 2026-07-28
+
+- TAG: [v2.0.7][2.0.7t]
+- COVERAGE: 100.00% -- 58/58 lines in 3 files
+- BRANCH COVERAGE: 100.00% -- 4/4 branches in 3 files
+- 100.00% documented
+
+### Added
+
 - Documentation linting now has its generated `yard-lint` dependency and severity config available in the local bundle.
 
 - kettle-jem-template-20260726-001 - Projects now include YARD lint
@@ -35,10 +54,6 @@ Please file a bug if you notice a violation of semantic versioning.
   setup-ruby-flash planning and can prepare appraisal-only jobs without
   installing the main Gemfile bundle.
 
-### Deprecated
-
-### Removed
-
 ### Fixed
 
 - kettle-jem-template-20260726-002 - Generated version files now document their
@@ -53,8 +68,6 @@ Please file a bug if you notice a violation of semantic versioning.
 - kettle-jem-template-20260728-003 - Generated dep-heads workflows now run
   TruffleRuby jobs with current RubyGems and Bundler, avoiding setup failures
   before the test suite starts.
-
-### Security
 
 ## [2.0.6] - 2026-07-25
 
@@ -274,7 +287,9 @@ Please file a bug if you notice a violation of semantic versioning.
 
 - Initial release
 
-[Unreleased]: https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.6...HEAD
+[Unreleased]: https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.7...HEAD
+[2.0.7]: https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.6...v2.0.7
+[2.0.7t]: https://github.com/galtzo-floss/gitmoji-regex/releases/tag/v2.0.7
 [2.0.6]: https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.5...v2.0.6
 [2.0.6t]: https://github.com/galtzo-floss/gitmoji-regex/releases/tag/v2.0.6
 [2.0.5]: https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.4...v2.0.5
