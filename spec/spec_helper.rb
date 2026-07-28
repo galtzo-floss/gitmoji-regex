@@ -38,6 +38,7 @@ end
 
 # External RSpec & related config
 require "kettle/test/rspec"
+# `kettle/test/rspec` installs harness helpers documented in spec/README.md.
 
 # This gem
 require "gitmoji/regex"
