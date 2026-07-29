@@ -28,11 +28,20 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Fixed
 
+### Security
+
+## [2.0.8] - 2026-07-28
+
+- TAG: [v2.0.8][2.0.8t]
+- COVERAGE: 100.00% -- 58/58 lines in 3 files
+- BRANCH COVERAGE: 100.00% -- 4/4 branches in 3 files
+- 100.00% documented
+
+### Fixed
+
 - kettle-jem-template-20260728-004 - Generated dep-heads workflows now use the
   setup-ruby Bundler install path for direct appraisal Gemfiles, avoiding rv
   lockfile parser failures on Git and path dependencies.
-
-### Security
 
 ## [2.0.7] - 2026-07-28
 
@@ -291,7 +300,9 @@ Please file a bug if you notice a violation of semantic versioning.
 
 - Initial release
 
-[Unreleased]: https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.7...HEAD
+[Unreleased]: https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.8...HEAD
+[2.0.8]: https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.7...v2.0.8
+[2.0.8t]: https://github.com/galtzo-floss/gitmoji-regex/releases/tag/v2.0.8
 [2.0.7]: https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.6...v2.0.7
 [2.0.7t]: https://github.com/galtzo-floss/gitmoji-regex/releases/tag/v2.0.7
 [2.0.6]: https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.5...v2.0.6
