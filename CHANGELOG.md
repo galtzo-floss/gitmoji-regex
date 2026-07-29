@@ -28,11 +28,20 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Fixed
 
+### Security
+
+## [2.0.10] - 2026-07-28
+
+- TAG: [v2.0.10][2.0.10t]
+- COVERAGE: 100.00% -- 58/58 lines in 3 files
+- BRANCH COVERAGE: 100.00% -- 4/4 branches in 3 files
+- 100.00% documented
+
+### Fixed
+
 - kettle-jem-template-20260729-001 - Generated JRuby 9.4 workflows now use the
   legacy manual bundle install path, avoiding setup-time Bundler full-index
   failures against `gem.coop`.
-
-### Security
 
 ## [2.0.9] - 2026-07-28
 
@@ -317,7 +326,9 @@ Please file a bug if you notice a violation of semantic versioning.
 
 - Initial release
 
-[Unreleased]: https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.9...HEAD
+[Unreleased]: https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.10...HEAD
+[2.0.10]: https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.9...v2.0.10
+[2.0.10t]: https://github.com/galtzo-floss/gitmoji-regex/releases/tag/v2.0.10
 [2.0.9]: https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.8...v2.0.9
 [2.0.9t]: https://github.com/galtzo-floss/gitmoji-regex/releases/tag/v2.0.9
 [2.0.8]: https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.7...v2.0.8
