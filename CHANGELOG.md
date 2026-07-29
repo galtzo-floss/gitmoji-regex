@@ -28,12 +28,21 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Fixed
 
+### Security
+
+## [2.0.11] - 2026-07-29
+
+- TAG: [v2.0.11][2.0.11t]
+- COVERAGE: 100.00% -- 58/58 lines in 3 files
+- BRANCH COVERAGE: 100.00% -- 4/4 branches in 3 files
+- 100.00% documented
+
+### Fixed
+
 - kettle-jem-template-20260729-002 - VersionGem bootstrap now preserves
   and templates dedicated `version_gem.rb` entrypoints even when the gemspec
   dependency is intentionally omitted, and generated anonymous-loader specs
   cover both `version.rb` and `version_gem.rb`.
-
-### Security
 
 ## [2.0.10] - 2026-07-28
 
@@ -331,7 +340,9 @@ Please file a bug if you notice a violation of semantic versioning.
 
 - Initial release
 
-[Unreleased]: https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.10...HEAD
+[Unreleased]: https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.11...HEAD
+[2.0.11]: https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.10...v2.0.11
+[2.0.11t]: https://github.com/galtzo-floss/gitmoji-regex/releases/tag/v2.0.11
 [2.0.10]: https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.9...v2.0.10
 [2.0.10t]: https://github.com/galtzo-floss/gitmoji-regex/releases/tag/v2.0.10
 [2.0.9]: https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.8...v2.0.9
