@@ -84,8 +84,8 @@ Please file a bug if you notice a violation of semantic versioning.</p>
 
 <h3 id="security">Security</h3>
 
-<h2 id="2011---2026-07-29">
-<a href="https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.10...v2.0.11">2.0.11</a> - 2026-07-29</h2>
+<h2 id="2011---2026-07-31">
+<a href="https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.10...v2.0.11">2.0.11</a> - 2026-07-31</h2>
 
 <ul>
   <li>TAG: <a href="https://github.com/galtzo-floss/gitmoji-regex/releases/tag/v2.0.11">v2.0.11</a>
@@ -98,10 +98,26 @@ Please file a bug if you notice a violation of semantic versioning.</p>
 <h3 id="fixed-1">Fixed</h3>
 
 <ul>
-  <li>kettle-jem-template-20260729-002 - VersionGem bootstrap now preserves<br>
+  <li>
+    <p>kettle-jem-template-20260729-002 - VersionGem bootstrap now preserves<br>
 and templates dedicated <code>version_gem.rb</code> entrypoints even when the gemspec<br>
 dependency is intentionally omitted, and generated anonymous-loader specs<br>
-cover both <code>version.rb</code> and <code>version_gem.rb</code>.</li>
+cover both <code>version.rb</code> and <code>version_gem.rb</code>.</p>
+  </li>
+  <li>kettle-jem-template-20260729-003 - Old-Ruby gems below the VersionGem runtime<br>
+floor now get managed minimal <code>version.rb</code> files and anonymous-loader version<br>
+specs without adding <code>version_gem</code>.</li>
+  <li>kettle-jem-template-20260730-001 - Gemspec package file enumeration now runs<br>
+relative to the gemspec directory, so packaged template assets are included<br>
+even when the gemspec is loaded from another working directory.</li>
+</ul>
+
+<h3 id="added-1">Added</h3>
+
+<ul>
+  <li>kettle-jem-template-20260729-005 - Gemspec metadata now publishes this<br>
+project’s RubyForum tag as <code>mailing_list_uri</code>, and support docs link to the<br>
+tagged RubyForum community alongside Discord.</li>
 </ul>
 
 <h2 id="2010---2026-07-28">
@@ -172,7 +188,7 @@ lockfile parser failures on Git and path dependencies.</li>
   <li>100.00% documented</li>
 </ul>
 
-<h3 id="added-1">Added</h3>
+<h3 id="added-2">Added</h3>
 
 <ul>
   <li>
@@ -298,7 +314,7 @@ workflows as failures.</li>
   <li>90.00% documented</li>
 </ul>
 
-<h3 id="added-2">Added</h3>
+<h3 id="added-3">Added</h3>
 
 <ul>
   <li>Added support for JRuby 10.1 and TruffleRuby 34.0.</li>
@@ -379,7 +395,7 @@ template updates.</li>
   <li>90.00% documented</li>
 </ul>
 
-<h3 id="added-3">Added</h3>
+<h3 id="added-4">Added</h3>
 
 <ul>
   <li>New gitmoji “🦖” (<code>:t-rex:</code>) for code that adds backwards compatibility</li>
@@ -408,7 +424,7 @@ template updates.</li>
   <li>100.00% documented</li>
 </ul>
 
-<h3 id="added-4">Added</h3>
+<h3 id="added-5">Added</h3>
 
 <ul>
   <li>New gitmoji “✈️”</li>
@@ -431,7 +447,7 @@ template updates.</li>
 </li>
 </ul>
 
-<h3 id="added-5">Added</h3>
+<h3 id="added-6">Added</h3>
 
 <ul>
   <li>New gitmoji “🧵”</li>
@@ -456,7 +472,7 @@ template updates.</li>
 <h2 id="101---2022-06-24">
 <a href="https://github.com/galtzo-floss/gitmoji-regex/compare/v1.0.0...v1.0.1">1.0.1</a> - 2022-06-24</h2>
 
-<h3 id="added-6">Added</h3>
+<h3 id="added-7">Added</h3>
 
 <ul>
   <li>bin stubs for development</li>
@@ -474,7 +490,7 @@ template updates.</li>
 <h2 id="100---2022-06-24">
 <a href="https://github.com/galtzo-floss/gitmoji-regex/compare/v0.1.3...v1.0.0">1.0.0</a> - 2022-06-24</h2>
 
-<h3 id="added-7">Added</h3>
+<h3 id="added-8">Added</h3>
 
 <ul>
   <li>New gitmoji “💸”</li>
@@ -490,7 +506,7 @@ template updates.</li>
 <h2 id="013---2022-03-30">
 <a href="https://github.com/galtzo-floss/gitmoji-regex/compare/v0.1.2...v0.1.3">0.1.3</a> - 2022-03-30</h2>
 
-<h3 id="added-8">Added</h3>
+<h3 id="added-9">Added</h3>
 
 <ul>
   <li>Documentation</li>
@@ -507,7 +523,7 @@ template updates.</li>
 <h2 id="012---2022-03-29">
 <a href="https://github.com/galtzo-floss/gitmoji-regex/compare/v0.1.1...v0.1.2">0.1.2</a> - 2022-03-29</h2>
 
-<h3 id="added-9">Added</h3>
+<h3 id="added-10">Added</h3>
 
 <ul>
   <li>Badges and Logos</li>
@@ -516,7 +532,7 @@ template updates.</li>
 <h2 id="011---2022-03-28">
 <a href="https://github.com/galtzo-floss/gitmoji-regex/compare/v0.1.0...v0.1.1">0.1.1</a> - 2022-03-28</h2>
 
-<h3 id="added-10">Added</h3>
+<h3 id="added-11">Added</h3>
 
 <ul>
   <li>Usage documentation</li>
@@ -525,7 +541,7 @@ template updates.</li>
 <h2 id="010---2022-03-28">
 <a href="https://github.com/galtzo-floss/gitmoji-regex/compare/e71c6c3dad5bfd59ae2509531eaea3a16e21cb63...v0.1.0">0.1.0</a> - 2022-03-28</h2>
 
-<h3 id="added-11">Added</h3>
+<h3 id="added-12">Added</h3>
 
 <ul>
   <li>Initial release</li>
