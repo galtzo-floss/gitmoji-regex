@@ -2,6 +2,7 @@
 
 require "anonymous_loader"
 require "gitmoji-regex"
+require "gitmoji/regex"
 RSpec.describe Gitmoji::Regex::Version do
   it_behaves_like "a Version module", described_class
 
