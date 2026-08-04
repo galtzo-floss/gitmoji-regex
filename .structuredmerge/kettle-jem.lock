@@ -146,7 +146,7 @@ template_state:
     gemfiles/modular/stringio/vHEAD.gemfile.example: e0497ab6dad9667b22725485b781e9d99349a079250eb29cb125d58f01f4a5be
     gemfiles/modular/style.gemfile.example: a15db732f566d958c2459ef549ae3877d984df3d205116e714284d1fe4f9b068
     gemfiles/modular/style_local.gemfile.example: '0083605323d23879dc7223f0198e9f1db24a25fa38730c4dbcc71c7a8a4c307f'
-    gemfiles/modular/templating.gemfile.example: f63e9254dcd76f02406fff515090570d2394dae220faac4f9b3cad6c1a78346a
+    gemfiles/modular/templating.gemfile.example: 3b2db799f879401ec595c54a5c3ca825b1f51a9e8976b932f80f12a06ea9791d
     gemfiles/modular/templating_local.gemfile.example: 84b328af40ee4f9b0355cd5b466f7c7903c49f86e9eb0d1bc3a1f34c8f0f1668
     gemfiles/modular/webrick/r4/v1.9.gemfile.example: 1ee940ff54d5ca3ce7fcff0d82ee9553386979656b9e220d5be5404d0991d5ea
     gemfiles/modular/webrick/vHEAD.gemfile.example: da545f591af987648ffbaba181707480a38dfb375db7d289617986ec2c2ca23b
@@ -1013,8 +1013,8 @@ files:
   gemfiles/modular/templating.gemfile:
     recipe: template_source_application_gemfiles_modular_templating_gemfile
     action: write
-    dest_sha256: f63e9254dcd76f02406fff515090570d2394dae220faac4f9b3cad6c1a78346a
-    input_fingerprint: b3dd153bd55610030334b2db5159458ddbdeb0e45ab7821efb14761a289a29d4
+    dest_sha256: 3b2db799f879401ec595c54a5c3ca825b1f51a9e8976b932f80f12a06ea9791d
+    input_fingerprint: 9916cad489cd69c30b2e75800221f103043ddf2a5e547063854d817a6c608919
     template_sources:
     - gemfiles/modular/templating.gemfile.example
   gemfiles/modular/templating_local.gemfile:
@@ -1098,14 +1098,14 @@ files:
     recipe: template_source_application_gitmoji_regex_gemspec
     action: write
     dest_sha256: d75e09bb39c43da8a7ff543d51cd545281ff1500680b7f4c531a7baa6c0ae89a
-    input_fingerprint: eca52dbf6b9112f6d674e841455d4911db92772a66509dd8746882dd1af4b1ce
+    input_fingerprint: 8b937a639fcb9e06a197e71d611f5b28d717a3e26416947abcdb75847074f6fc
     template_sources:
     - gem.gemspec.example
   lib/gitmoji/regex/version.rb:
     recipe: template_source_application_lib_gitmoji_regex_version_rb
     action: write
     dest_sha256: df27702d2852c32704a40ddca0206cae3141e9262b3599497b0eed5a3c9fa06c
-    input_fingerprint: 00f12aa8518933cc68e748c5ed12148aad51b39a76806f5ba6bdf62221a9ce92
+    input_fingerprint: f3492700531ae19ba6ac53039cd787bd8908a3d30f0c6647c19b9a4d51d5da06
     template_sources:
     - lib/gem/version.rb.example
   mise.toml:
