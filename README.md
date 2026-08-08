@@ -143,6 +143,15 @@ Not needed.
 
 ## 🔧 Basic Usage
 
+Require the generated expression and use it with Ruby's normal regexp APIs:
+
+```ruby
+require "gitmoji/regex"
+
+"✨ Add a feature".match?(Gitmoji::Regex::REGEX) # => true
+"✨ Fix a bug 🐛".scan(Gitmoji::Regex::REGEX)    # => ["✨", "🐛"]
+```
+
 ## 🦷 FLOSS Funding
 
 While galtzo-floss tools are free software and will always be, the project would benefit immensely from some funding.
