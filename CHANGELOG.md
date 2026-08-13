@@ -22,14 +22,29 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Changed
 
+### Deprecated
+
+### Removed
+
+### Fixed
+
+### Security
+
+## [2.0.12] - 2026-08-12
+
+- TAG: [v2.0.12][2.0.12t]
+- COVERAGE: 100.00% -- 58/58 lines in 3 files
+- BRANCH COVERAGE: 100.00% -- 4/4 branches in 3 files
+- 100.00% documented
+
+### Changed
+
 - kettle-jem-template-20260801-001 - Generated README gem dashboard links now
   use ClickGems instead of BestGems.
 
 - Prepare project for kettle-jem templates: updated 12 project files across dependencies (12).
 
-### Deprecated
-
-### Removed
+- Apply kettle-jem templates: updated 8 project files across code and tests (1), configuration (1), dependencies (2), documentation (1), other (3).
 
 ### Fixed
 
@@ -45,8 +60,6 @@ Please file a bug if you notice a violation of semantic versioning.
 
 - kettle-jem-template-20260802-001 - Devcontainer JSON files now merge as JSONC,
   preserving comments and trailing commas during template updates.
-
-### Security
 
 ## [2.0.11] - 2026-07-31
 
@@ -353,7 +366,9 @@ Please file a bug if you notice a violation of semantic versioning.
 
 - Initial release
 
-[Unreleased]: https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.11...HEAD
+[Unreleased]: https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.12...HEAD
+[2.0.12]: https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.11...v2.0.12
+[2.0.12t]: https://github.com/galtzo-floss/gitmoji-regex/releases/tag/v2.0.12
 [2.0.11]: https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.10...v2.0.11
 [2.0.11t]: https://github.com/galtzo-floss/gitmoji-regex/releases/tag/v2.0.11
 [2.0.10]: https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.9...v2.0.10

@@ -70,7 +70,7 @@ and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semant
 and <a href="https://tom.preston-werner.com/2022/05/23/major-version-numbers-are-not-sacred.html">yes</a>, platform and engine support are part of the <a href="https://github.com/semver/semver/issues/716#issuecomment-869336139">public API</a>.<br>
 Please file a bug if you notice a violation of semantic versioning.</p>
 
-<h2 id="unreleased"><a href="https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.11...HEAD">Unreleased</a></h2>
+<h2 id="unreleased"><a href="https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.12...HEAD">Unreleased</a></h2>
 
 <h3 id="added">Added</h3>
 
@@ -84,6 +84,50 @@ Please file a bug if you notice a violation of semantic versioning.</p>
 
 <h3 id="security">Security</h3>
 
+<h2 id="2012---2026-08-12">
+<a href="https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.11...v2.0.12">2.0.12</a> - 2026-08-12</h2>
+
+<ul>
+  <li>TAG: <a href="https://github.com/galtzo-floss/gitmoji-regex/releases/tag/v2.0.12">v2.0.12</a>
+</li>
+  <li>COVERAGE: 100.00% – 58/58 lines in 3 files</li>
+  <li>BRANCH COVERAGE: 100.00% – 4/4 branches in 3 files</li>
+  <li>100.00% documented</li>
+</ul>
+
+<h3 id="changed-1">Changed</h3>
+
+<ul>
+  <li>
+    <p>kettle-jem-template-20260801-001 - Generated README gem dashboard links now<br>
+use ClickGems instead of BestGems.</p>
+  </li>
+  <li>
+    <p>Prepare project for kettle-jem templates: updated 12 project files across dependencies (12).</p>
+  </li>
+  <li>
+    <p>Apply kettle-jem templates: updated 8 project files across code and tests (1), configuration (1), dependencies (2), documentation (1), other (3).</p>
+  </li>
+</ul>
+
+<h3 id="fixed-1">Fixed</h3>
+
+<ul>
+  <li>kettle-jem-template-20260801-002 - Generated RSpec helpers now normalize<br>
+managed configuration block bindings structurally, preventing mixed block<br>
+parameter names from producing invalid configuration after a merge.</li>
+  <li>kettle-jem-template-20260801-003 - Generated project metadata and<br>
+documentation now normalize configured underscore hostnames to valid<br>
+hyphenated hostnames.</li>
+  <li>
+    <p>kettle-jem-template-20260801-004 - Generated organization README logos now<br>
+use GitHub’s stable organization avatar endpoint instead of assuming a<br>
+matching Galtzo-hosted asset exists.</p>
+  </li>
+  <li>kettle-jem-template-20260802-001 - Devcontainer JSON files now merge as JSONC,<br>
+preserving comments and trailing commas during template updates.</li>
+</ul>
+
 <h2 id="2011---2026-07-31">
 <a href="https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.10...v2.0.11">2.0.11</a> - 2026-07-31</h2>
 
@@ -95,30 +139,15 @@ Please file a bug if you notice a violation of semantic versioning.</p>
   <li>100.00% documented</li>
 </ul>
 
-<h3 id="fixed-1">Fixed</h3>
+<h3 id="fixed-2">Fixed</h3>
 
 <ul>
-  <li>
-    <p>kettle-jem-template-20260729-002 - VersionGem bootstrap now preserves<br>
-and templates dedicated <code>version_gem.rb</code> entrypoints even when the gemspec<br>
-dependency is intentionally omitted, and generated anonymous-loader specs<br>
-cover both <code>version.rb</code> and <code>version_gem.rb</code>.</p>
-  </li>
-  <li>kettle-jem-template-20260729-003 - Old-Ruby gems below the VersionGem runtime<br>
-floor now get managed minimal <code>version.rb</code> files and anonymous-loader version<br>
-specs without adding <code>version_gem</code>.</li>
   <li>kettle-jem-template-20260730-001 - Gemspec package file enumeration now runs<br>
 relative to the gemspec directory, so packaged template assets are included<br>
 even when the gemspec is loaded from another working directory.</li>
 </ul>
 
 <h3 id="added-1">Added</h3>
-
-<ul>
-  <li>kettle-jem-template-20260729-005 - Gemspec metadata now publishes this<br>
-project’s RubyForum tag as <code>mailing_list_uri</code>, and support docs link to the<br>
-tagged RubyForum community alongside Discord.</li>
-</ul>
 
 <h2 id="2010---2026-07-28">
 <a href="https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.9...v2.0.10">2.0.10</a> - 2026-07-28</h2>
@@ -131,7 +160,7 @@ tagged RubyForum community alongside Discord.</li>
   <li>100.00% documented</li>
 </ul>
 
-<h3 id="fixed-2">Fixed</h3>
+<h3 id="fixed-3">Fixed</h3>
 
 <ul>
   <li>kettle-jem-template-20260729-001 - Generated JRuby 9.4 workflows now use the<br>
@@ -150,7 +179,7 @@ failures against <code>gem.coop</code>.</li>
   <li>100.00% documented</li>
 </ul>
 
-<h3 id="fixed-3">Fixed</h3>
+<h3 id="fixed-4">Fixed</h3>
 
 <ul>
   <li>kettle-jem-template-20260728-005 - VersionGem bootstrap now creates the<br>
@@ -169,7 +198,7 @@ specs.</li>
   <li>100.00% documented</li>
 </ul>
 
-<h3 id="fixed-4">Fixed</h3>
+<h3 id="fixed-5">Fixed</h3>
 
 <ul>
   <li>kettle-jem-template-20260728-004 - Generated dep-heads workflows now use the<br>
@@ -205,7 +234,7 @@ RSpec helpers provided by <code>kettle-test</code>.</p>
   </li>
 </ul>
 
-<h3 id="changed-1">Changed</h3>
+<h3 id="changed-2">Changed</h3>
 
 <ul>
   <li>kettle-jem-template-20260728-001 - Generated Ruby workflows now use clearer<br>
@@ -213,7 +242,7 @@ setup-ruby-flash planning and can prepare appraisal-only jobs without<br>
 installing the main Gemfile bundle.</li>
 </ul>
 
-<h3 id="fixed-5">Fixed</h3>
+<h3 id="fixed-6">Fixed</h3>
 
 <ul>
   <li>
@@ -242,7 +271,7 @@ before the test suite starts.</li>
   <li>90.00% documented</li>
 </ul>
 
-<h3 id="changed-2">Changed</h3>
+<h3 id="changed-3">Changed</h3>
 
 <ul>
   <li>kettle-jem-template-20260725-002 - Generated gemspec templates now include<br>
@@ -263,21 +292,15 @@ or incompatible with the project’s runtime Ruby floor.</li>
   <li>90.00% documented</li>
 </ul>
 
-<h3 id="changed-3">Changed</h3>
+<h3 id="changed-4">Changed</h3>
 
 <ul>
-  <li>kettle-jem-template-20260716-001 - Shim gemspec manifests now include<br>
-<code>LICENSE.md</code> instead of nonexistent <code>LICENSE.txt</code>.</li>
   <li>kettle-jem-template-20260716-002 - Generated gemspec manifests now ship fewer<br>
 repository-only files by default to reduce downstream distro packaging churn.</li>
-  <li>kettle-jem-template-20260720-001 - Generated READMEs can now render<br>
-template-managed corporate sponsor logos from project or family config.</li>
   <li>kettle-jem-template-20260720-002 - Generated development Gemfiles now use the<br>
 released <code>tree_sitter_language_pack</code> gem 1.13.3 or newer by default.</li>
   <li>kettle-jem-template-20260720-003 - Generated StructuredMerge Git diff driver<br>
 config now uses the installed <code>smorg-rb</code> Ruby driver name.</li>
-  <li>kettle-jem-template-20260720-004 - Generated multi-engine workflow files now<br>
-omit JRuby and TruffleRuby jobs when project config declares MRI-only engines.</li>
   <li>kettle-jem-template-20260720-005 - Generated README Support &amp; Community rows<br>
 now include a RubyForum help badge.</li>
   <li>kettle-jem-template-20260725-001 - Generated JRuby and TruffleRuby workflow<br>
@@ -297,7 +320,7 @@ workflows as failures.</li>
   <li>90.00% documented</li>
 </ul>
 
-<h3 id="fixed-6">Fixed</h3>
+<h3 id="fixed-7">Fixed</h3>
 
 <ul>
   <li>Package configured license files in gem release file lists.</li>
@@ -320,13 +343,13 @@ workflows as failures.</li>
   <li>Added support for JRuby 10.1 and TruffleRuby 34.0.</li>
 </ul>
 
-<h3 id="changed-4">Changed</h3>
+<h3 id="changed-5">Changed</h3>
 
 <ul>
   <li>Retemplated project metadata and CI/development automation with <code>kettle-jem</code> v7.0.0.</li>
 </ul>
 
-<h3 id="fixed-7">Fixed</h3>
+<h3 id="fixed-8">Fixed</h3>
 
 <ul>
   <li>Corrected RubyGems homepage metadata to point at the gem documentation site.</li>
@@ -343,13 +366,13 @@ workflows as failures.</li>
   <li>90.00% documented</li>
 </ul>
 
-<h3 id="fixed-8">Fixed</h3>
+<h3 id="fixed-9">Fixed</h3>
 
 <ul>
   <li>Restored <code>docs/CNAME</code> so the generated documentation site keeps its custom domain.</li>
 </ul>
 
-<h3 id="changed-5">Changed</h3>
+<h3 id="changed-6">Changed</h3>
 
 <ul>
   <li>Refreshed kettle-jem-managed project files, raising the <code>kettle-dev</code><br>
@@ -369,7 +392,7 @@ standalone templating so generated workflows are refreshed by retemplating.</li>
   <li>90.00% documented</li>
 </ul>
 
-<h3 id="changed-6">Changed</h3>
+<h3 id="changed-7">Changed</h3>
 
 <ul>
   <li>Refreshed kettle-jem-managed project files, including StructuredMerge git<br>
@@ -377,7 +400,7 @@ driver configuration, local development dependency wiring, and README/Rakefile<b
 template updates.</li>
 </ul>
 
-<h3 id="fixed-9">Fixed</h3>
+<h3 id="fixed-10">Fixed</h3>
 
 <ul>
   <li>Fixed generated documentation URLs that incorrectly pointed at a monorepo<br>
@@ -401,7 +424,7 @@ template updates.</li>
   <li>New gitmoji “🦖” (<code>:t-rex:</code>) for code that adds backwards compatibility</li>
 </ul>
 
-<h3 id="changed-7">Changed</h3>
+<h3 id="changed-8">Changed</h3>
 
 <ul>
   <li>Documented the <code>bin/refresh</code> maintainer workflow for syncing the upstream gitmoji reference</li>
@@ -431,7 +454,7 @@ template updates.</li>
   <li>appraisal2 for improved testing platform coverage in CI</li>
 </ul>
 
-<h3 id="changed-8">Changed</h3>
+<h3 id="changed-9">Changed</h3>
 
 <ul>
   <li>gem dependencies for local development</li>
@@ -456,13 +479,13 @@ template updates.</li>
   <li>Releases now include SHA256 and SHA512 checksums</li>
 </ul>
 
-<h3 id="fixed-10">Fixed</h3>
+<h3 id="fixed-11">Fixed</h3>
 
 <ul>
   <li>100% branch &amp; line test coverage</li>
 </ul>
 
-<h3 id="changed-9">Changed</h3>
+<h3 id="changed-10">Changed</h3>
 
 <ul>
   <li>Primary source forge moved from GitHub to <a href="https://git.sr.ht/~galtzo/gitmoji-regex">Source Hut</a>
@@ -479,7 +502,7 @@ template updates.</li>
   <li>Improved contributing guidelines</li>
 </ul>
 
-<h3 id="fixed-11">Fixed</h3>
+<h3 id="fixed-12">Fixed</h3>
 
 <ul>
   <li>Updated Template <code>src/regex.rb</code>
@@ -497,7 +520,7 @@ template updates.</li>
   <li>Gitmoji::Regex::Version is introspectable</li>
 </ul>
 
-<h3 id="changed-10">Changed</h3>
+<h3 id="changed-11">Changed</h3>
 
 <ul>
   <li>Gitmoji::Regex::VERSION is now Gitmoji::Regex::Version::VERSION</li>
@@ -513,7 +536,7 @@ template updates.</li>
   <li>Badges</li>
 </ul>
 
-<h3 id="fixed-12">Fixed</h3>
+<h3 id="fixed-13">Fixed</h3>
 
 <ul>
   <li>Code Coverage</li>
