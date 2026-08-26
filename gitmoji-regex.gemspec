@@ -20,7 +20,7 @@ gem_version =
 Gem::Specification.new do |spec|
   spec.name = "gitmoji-regex"
   spec.version = gem_version
-  spec.authors = ["Peter H. Boling", "Aboling0"]
+  spec.authors = ["Peter H. Boling", "Annibelle Boling"]
   spec.email = ["floss@galtzo.com"]
 
   spec.summary = "🏁 A regular expression for Gitmoji symbols"
@@ -132,7 +132,7 @@ Gem::Specification.new do |spec|
   #       and preferably a modular one (see gemfiles/modular/*.gemfile).
 
   # Dev, Test, & Release Tasks
-  spec.add_development_dependency("kettle-dev", "~> 3.0", ">= 3.0.6")             # ruby >= 2.4
+  spec.add_development_dependency("kettle-dev", "~> 3.0", ">= 3.0.13")             # ruby >= 2.4
 
   # Security
   spec.add_development_dependency("bundler-audit", "~> 0.9.3")                      # ruby >= 2.0.0
@@ -147,8 +147,8 @@ Gem::Specification.new do |spec|
   # Loads version files in anonymous namespaces for coverage without constant redefinition warnings.
   spec.add_development_dependency("anonymous_loader", "~> 0.1", ">= 0.1.3")         # ruby >= 2.2.0
   spec.add_development_dependency("appraisal2", "~> 3.2", ">= 3.2.2")               # ruby >= 1.8.7, for testing against multiple versions of dependencies
-  spec.add_development_dependency("kettle-test", "~> 2.0", ">= 2.0.19")            # ruby >= 2.4
-  spec.add_development_dependency("turbo_tests2", "~> 3.2", ">= 3.2.5")           # ruby >= 2.4.0, default kettle-test runner
+  spec.add_development_dependency("kettle-test", "~> 2.0", ">= 2.0.20")            # ruby >= 2.4
+  spec.add_development_dependency("turbo_tests2", "~> 3.2", ">= 3.2.6")           # ruby >= 2.4.0, default kettle-test runner
 
   # Releasing
   spec.add_development_dependency("ruby-progressbar", "~> 1.13")                    # ruby >= 0
