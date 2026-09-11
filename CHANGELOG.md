@@ -22,14 +22,6 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Changed
 
-- [kc] kettle-jem/prepare: updated 9 project files:
-  - dependencies (9)
-
-- [kc] kettle-jem/template: updated 6 project files:
-  - code and tests (1)
-  - dependencies (4)
-  - other (1)
-
 ### Deprecated
 
 ### Removed
@@ -37,6 +29,23 @@ Please file a bug if you notice a violation of semantic versioning.
 ### Fixed
 
 ### Security
+
+## [2.0.13] - 2026-09-11
+
+- TAG: [v2.0.13][2.0.13t]
+- COVERAGE: 100.00% -- 58/58 lines in 3 files
+- BRANCH COVERAGE: 100.00% -- 4/4 branches in 3 files
+- 100.00% documented
+
+### Changed
+
+- [kc] kettle-jem/prepare: updated 9 project files:
+  - dependencies (9)
+
+- [kc] kettle-jem/template: updated 6 project files:
+  - code and tests (1)
+  - dependencies (4)
+  - other (1)
 
 ## [2.0.12] - 2026-08-12
 
@@ -374,7 +383,9 @@ Please file a bug if you notice a violation of semantic versioning.
 
 - Initial release
 
-[Unreleased]: https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.12...HEAD
+[Unreleased]: https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.13...HEAD
+[2.0.13]: https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.12...v2.0.13
+[2.0.13t]: https://github.com/galtzo-floss/gitmoji-regex/releases/tag/v2.0.13
 [2.0.12]: https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.11...v2.0.12
 [2.0.12t]: https://github.com/galtzo-floss/gitmoji-regex/releases/tag/v2.0.12
 [2.0.11]: https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.10...v2.0.11
