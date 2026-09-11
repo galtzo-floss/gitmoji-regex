@@ -20,6 +20,7 @@ template_state:
     kettle-jem/template:
     - ".simplecov"
     - Gemfile
+    - Rakefile
     - gemfiles/modular/rspec.gemfile
     - gemfiles/modular/templating.gemfile
     - gitmoji-regex.gemspec
