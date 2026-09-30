@@ -20,6 +20,25 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Added
 
+### Changed
+
+### Deprecated
+
+### Removed
+
+### Fixed
+
+### Security
+
+## [2.0.14] - 2026-09-30
+
+- TAG: [v2.0.14][2.0.14t]
+- COVERAGE: 100.00% -- 58/58 lines in 3 files
+- BRANCH COVERAGE: 100.00% -- 4/4 branches in 3 files
+- 100.00% documented
+
+### Added
+
 - kettle-jem-template-20260913-001 - Templating now also surfaces a review
   entry in `dependency_conflicts.resolve` when a direct development
   dependency doesn't support one or more of this project's declared
@@ -37,14 +56,6 @@ Please file a bug if you notice a violation of semantic versioning.
   - dependencies (3)
   - other (2)
   - workflows (31)
-
-### Deprecated
-
-### Removed
-
-### Fixed
-
-### Security
 
 ## [2.0.13] - 2026-09-11
 
@@ -399,7 +410,9 @@ Please file a bug if you notice a violation of semantic versioning.
 
 - Initial release
 
-[Unreleased]: https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.13...HEAD
+[Unreleased]: https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.14...HEAD
+[2.0.14]: https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.13...v2.0.14
+[2.0.14t]: https://github.com/galtzo-floss/gitmoji-regex/releases/tag/v2.0.14
 [2.0.13]: https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.12...v2.0.13
 [2.0.13t]: https://github.com/galtzo-floss/gitmoji-regex/releases/tag/v2.0.13
 [2.0.12]: https://github.com/galtzo-floss/gitmoji-regex/compare/v2.0.11...v2.0.12
