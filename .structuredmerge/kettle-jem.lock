@@ -21,9 +21,15 @@ template_state:
     - gemfiles/modular/templating_local.gemfile
     - gitmoji-regex.gemspec
     kettle-jem/template:
+    - ".github/workflows/current.yml"
+    - ".github/workflows/danger.yml"
+    - ".github/workflows/heads.yml"
+    - ".github/workflows/license-eye.yml"
     - ".github/workflows/templating.yml"
+    - ".github/workflows/truffleruby-23.0.yml"
     - ".simplecov"
     - CONTRIBUTING.md
+    - README.md
     - Rakefile
     - gemfiles/modular/rspec.gemfile
   checksums:
