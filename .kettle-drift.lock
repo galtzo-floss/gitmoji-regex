@@ -3,8 +3,27 @@
     {
       "file": "CHANGELOG.md",
       "lines": [
+        29,
+        56,
+        75
+      ]
+    }
+  ],
+  "- dependencies (1)\n- other (1)": [
+    {
+      "file": "CHANGELOG.md",
+      "lines": [
         30,
-        57
+        76
+      ]
+    }
+  ],
+  "- other (1)\n- workflows (6)": [
+    {
+      "file": "CHANGELOG.md",
+      "lines": [
+        31,
+        59
       ]
     }
   ],
