@@ -1,38 +1,10 @@
 {
-  "- code and tests (1)\n- dependencies (1)": [
-    {
-      "file": "CHANGELOG.md",
-      "lines": [
-        29,
-        56,
-        75
-      ]
-    }
-  ],
-  "- dependencies (1)\n- other (1)": [
-    {
-      "file": "CHANGELOG.md",
-      "lines": [
-        30,
-        76
-      ]
-    }
-  ],
-  "- other (1)\n- workflows (6)": [
-    {
-      "file": "CHANGELOG.md",
-      "lines": [
-        31,
-        59
-      ]
-    }
-  ],
   "- ruby: \"ruby\"\nappraisal: \"current\"": [
     {
       "file": ".github/workflows/current.yml",
       "lines": [
-        40,
-        46
+        41,
+        47
       ]
     }
   ],
@@ -49,8 +21,8 @@
     {
       "file": ".github/workflows/current.yml",
       "lines": [
-        43,
-        49
+        44,
+        50
       ]
     }
   ]
