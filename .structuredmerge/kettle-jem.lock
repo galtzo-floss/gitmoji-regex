@@ -2,7 +2,7 @@
 version: 1
 template_state:
   version: 7.1.38
-  applied_at: '2026-10-21'
+  applied_at: '2026-10-22'
   changelog_replay:
     last_entry_key: kettle-jem-template-20260913-001
     last_entry_date: '2026-09-13'
@@ -50,6 +50,7 @@ template_state:
     - ".github/workflows/unlocked_deps.yml"
     - ".simplecov"
     - Gemfile
+    - README.md
     - Rakefile
     - gemfiles/modular/coverage_local.gemfile
     - gemfiles/modular/rspec.gemfile
@@ -779,8 +780,8 @@ files:
   README.md:
     recipe: template_source_application_README_md
     action: write
-    dest_sha256: 45cf90e623656f57f95370ff930a24ad4a969badf63c5081026f685e1d1c00e0
-    input_fingerprint: a4ec902f98a6cfb413117ce211a2353edefc58068d83a5ccce3d1a6b9b963512
+    dest_sha256: c6e2f0d4868d44f7a297426dc0024c49e445c3e72aa7ce07e6e5c198c6e26b4b
+    input_fingerprint: 42e3d3c8329b986503d3100950453a211e1b8223b173ff5b8ae8182450d51fed
     template_sources:
     - README.md.example
   REEK:
@@ -1164,8 +1165,8 @@ files:
   gitmoji-regex.gemspec:
     recipe: template_source_application_gitmoji_regex_gemspec
     action: write
-    dest_sha256: c1a0dc320b1f121efa1e7f929d0a1002c7915451f6219f61b08e31155d8d38ec
-    input_fingerprint: '097a1195136386817addbdb35cd0ae8cccb335eccc38e11dd87292521df6d46d'
+    dest_sha256: 9f16f868fd7d46bfff82e4b3d368d6bdd08595ca7453f7f5f4546e93ddc6eca6
+    input_fingerprint: ad66eeba888a2edd61bb5dbe5048c49e914827c929622aaa16b71ee989f42bb1
     template_sources:
     - gem.gemspec.example
   lib/gitmoji/regex/version.rb:

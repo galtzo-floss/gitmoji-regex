@@ -23,8 +23,8 @@ Gem::Specification.new do |spec|
   spec.authors = ["Peter H. Boling", "Annibelle Boling"]
   spec.email = ["floss@galtzo.com"]
 
-  spec.summary = "🏁 A regular expression for Gitmoji symbols"
-  spec.description = "🏁 A regular expression matching Gitmoji (a subset of Unicode Emoji) symbolsFund overlooked open source projects - bottom of stack, dev/test dependencies: floss-funding.dev"
+  spec.summary = "😜 A regular expression for Gitmoji symbols"
+  spec.description = "😜 A regular expression matching Gitmoji (a subset of Unicode Emoji) symbolsFund overlooked open source projects - bottom of stack, dev/test dependencies: floss-funding.dev"
   spec.homepage = "https://github.com/galtzo-floss/gitmoji-regex"
   spec.licenses = ["MIT"]
   spec.required_ruby_version = ">= 2.4"
@@ -62,7 +62,7 @@ Gem::Specification.new do |spec|
   gemspec_root = __dir__
   relative_package_path = lambda do |path|
     prefix = "#{gemspec_root}/"
-    (path[0, prefix.length] == prefix) ? path[prefix.length..-1] : path
+    path[0, prefix.length] == prefix ? path[prefix.length..-1] : path
   end
   enumerate_package_glob = lambda do |glob|
     files = []
