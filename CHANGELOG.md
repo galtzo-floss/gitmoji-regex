@@ -25,9 +25,10 @@ Please file a bug if you notice a violation of semantic versioning.
 - [kc] kettle-jem/prepare: updated 6 project files:
   - dependencies (6)
 
-- [kc] kettle-jem/template: updated 12 project files:
+- [kc] kettle-jem/template: updated 13 project files:
   - code and tests (1)
   - dependencies (3)
+  - documentation (1)
   - other (1)
   - workflows (7)
 
@@ -173,10 +174,6 @@ Please file a bug if you notice a violation of semantic versioning.
 - 100.00% documented
 
 ### Fixed
-
-- kettle-jem-template-20260729-001 - Generated JRuby 9.4 workflows now use the
-  legacy manual bundle install path, avoiding setup-time Bundler full-index
-  failures against `gem.coop`.
 
 ## [2.0.9] - 2026-07-28
 
