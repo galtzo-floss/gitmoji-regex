@@ -22,14 +22,6 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Changed
 
-- [kc] kettle-jem/prepare: updated 11 project files:
-  - dependencies (11)
-
-- [kc] kettle-jem/template: updated 5 project files:
-  - code and tests (1)
-  - dependencies (3)
-  - other (1)
-
 ### Deprecated
 
 ### Removed
@@ -38,7 +30,7 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Security
 
-## [2.0.17] - 2026-11-15
+## [2.0.17] - 2026-11-17
 
 - TAG: [v2.0.17][2.0.17t]
 - COVERAGE: 100.00% -- 58/58 lines in 3 files
@@ -47,14 +39,13 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Changed
 
-- [kc] kettle-jem/prepare: updated 8 project files:
-  - dependencies (8)
-
-- [kc] kettle-jem/template: updated 15 project files:
-  - code and tests (1)
-  - dependencies (4)
+- [kc] kettle-jem/prepare: updated 19 project files:
+  - dependencies (19)
+- [kc] kettle-jem/template: updated 20 project files:
+  - code and tests (2)
+  - dependencies (7)
   - documentation (1)
-  - other (1)
+  - other (2)
   - workflows (8)
 
 ## [2.0.16] - 2026-11-09
